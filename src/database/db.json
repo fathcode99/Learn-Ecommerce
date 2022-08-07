@@ -1,0 +1,53 @@
+{
+    "products": [
+        {
+            "id" : 1,
+            "name" : "NIKE AIR ZOOM-TYPE",
+            "category": "Men, Sport, Sneaker",
+            "brand" : "NIKE",
+            "rating" : [],
+            "colour" : "BLACK/SUMMIT WHITE-MENTA-ORANGE TRANCE",
+            "description": "When it comes to basketball, there is no way around nike - the brand with the swoosh belongs to",
+            "price": 2500000,
+            "stock": 13,
+            "image": [
+                "https://i.pinimg.com/736x/14/36/98/14369849ed9a51eadffeca48a578884e.jpg",
+                "https://i.pinimg.com/564x/20/c2/2a/20c22aada6900a2c6efc2a69f87f54f8.jpg"
+            ]
+        },
+
+        {
+            "id" : 1,
+            "name" : "NIKE AIR ZOOM-TYPE",
+            "category": "Men, Sport, Sneaker",
+            "brand" : "NIKE",
+            "rating" : [],
+            "colour" : "BLACK/SUMMIT WHITE-MENTA-ORANGE TRANCE",
+            "description": "When it comes to basketball, there is no way around nike - the brand with the swoosh belongs to",
+            "price": 2500000,
+            "stock": 13,
+            "image": [
+                "https://i.pinimg.com/736x/14/36/98/14369849ed9a51eadffeca48a578884e.jpg",
+                "https://i.pinimg.com/564x/20/c2/2a/20c22aada6900a2c6efc2a69f87f54f8.jpg"
+            ]
+        },
+
+        {
+            "id" : 1,
+            "name" : "NIKE AIR ZOOM-TYPE",
+            "category": "Men, Sport, Sneaker",
+            "brand" : "NIKE",
+            "rating" : [],
+            "colour" : "BLACK/SUMMIT WHITE-MENTA-ORANGE TRANCE",
+            "description": "When it comes to basketball, there is no way around nike - the brand with the swoosh belongs to",
+            "price": 2500000,
+            "stock": 13,
+            "image": [
+                "https://i.pinimg.com/736x/14/36/98/14369849ed9a51eadffeca48a578884e.jpg",
+                "https://i.pinimg.com/564x/20/c2/2a/20c22aada6900a2c6efc2a69f87f54f8.jpg"
+            ]
+        }
+    ],
+    "user": [],
+    "history": []
+}
