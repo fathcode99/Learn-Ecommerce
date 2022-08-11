@@ -4,61 +4,41 @@ import {
     Nav,
     Container,
     Image
-    
+
 } from 'react-bootstrap'
 import { LOGO } from '../asset'
 import { Link } from 'react-router-dom'
 
-class NavigationBar extends React.Component {
-    render() {
-        return (
-            <Navbar fixed="top" Navbar bg="dark" variant="dark" className="m-0">
-                <Container fluid className="px-5 px-5" style={styles.container}>
-                    <div style={styles.container}>
-                        <Navbar.Brand as={Link} to="/" style={styles.fontBrand}>
-                            <Image src={LOGO} style={styles.image} />
-                        </Navbar.Brand>
-                        <Nav className="me-auto" style={styles.navFont}>
-                            <Nav.Link as={Link} to="/">Home</Nav.Link>
-                            <Nav.Link href="#features">Features</Nav.Link>
-                            <Nav.Link href="#pricing">Pricing</Nav.Link>
-                        </Nav>
-                    </div>
+import "./NavBar.css"
 
-                    <div style={styles.container}>
-                        <Nav className="me-auto" style={styles.navFont}>
-                            <Nav.Link as={Link} to="/register">Register</Nav.Link>
-                            <Nav.Link as={Link} to="/Login">Login</Nav.Link>
-                        </Nav>
+export default function NavigationBar() {
+    return (
+        <Navbar fixed="top" className="navbar-general m-0">
+            <Container fluid className="px-5 px-5">
+                <div className="container-menu">
+                    <Navbar.Brand as={Link} to="/">
+                        <Image src={LOGO} className="image" />
+                    </Navbar.Brand>
+                    <Nav>
+                        <Nav className="navFont me-4" as={Link} to="/">Home</Nav>
+                        <Nav className="navFont me-4" as={Link} to="/">Best Product</Nav>
+                        <Nav className="navFont me-4" as={Link} to="/">Best Selling</Nav>
+                    </Nav>
+                </div>
 
-                        {/* <NavDropdown title="Login" id="collasible-nav-dropdown" style={styles.button}>
+                <div className="container-login">
+                    <Nav className="me-auto navFont">
+                        <Nav className="navFont me-4" as={Link} to="/register">Register</Nav>
+                        <Nav className="navFont" as={Link} to="/Login">Login</Nav>
+                    </Nav>
+
+                    {/* <NavDropdown title="Login" id="collasible-nav-dropdown" style={styles.button}>
                             <NavDropdown.Item as={Link} to="/login">Profile</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to="/">Logout</NavDropdown.Item>
                         </NavDropdown> */}
-                        <button style={styles.button}><i class="fa-brands fa-shopify"></i></button>
-                    </div>
-                </Container>
-            </Navbar>
-        )
-    }
+                    <button className="button"><i class="fa-brands fa-shopify"></i></button>
+                </div>
+            </Container>
+        </Navbar>
+    )
 }
-const styles = {
-    container: {
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-    },
-    navFont: {
-        color: 'white',
-        fontWeight: '600'
-    },
-    button: {
-        border: 'none',
-        backgroundColor: 'transparent',
-    },
-    image: {
-        height: '50px'
-    }
-}
-
-export default NavigationBar

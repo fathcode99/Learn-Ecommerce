@@ -10,8 +10,7 @@ import LoginPages from './pages/login';
 import RegisterPages from './pages/register';
 
 
-class App extends React.Component {
-  render() {
+export default function App () {
     return (
       <div>
         <NavigationBar />
@@ -22,7 +21,4 @@ class App extends React.Component {
         </Routes>
       </div>
     );
-  }
 }
-
-export default App;

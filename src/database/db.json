@@ -48,6 +48,14 @@
             ]
         }
     ],
-    "user": [],
+    "user": [
+        {
+            "id" : 1,
+            "username" : "admin",
+            "password" : "admin123",
+            "email" : "admin@gmail.com",
+            "role" : "admin"
+        }
+    ],
     "history": []
 }

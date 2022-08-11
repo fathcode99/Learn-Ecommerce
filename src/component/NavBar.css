@@ -1,0 +1,43 @@
+.navbar-general {
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15) ;
+}
+
+.container-menu {
+    display: flex;
+    justify-content: space-between;
+    align-Items: center;
+    height: fit-content;
+}
+
+.container-login {
+    display: flex;
+    justify-content: left;
+    align-Items: center;
+    height: fit-content;
+}
+
+.navFont {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: medium;
+}
+.navFont:hover {
+    color: aqua;
+}
+
+.button {
+    border: none;
+    background-color: transparent;
+    color: white;
+    margin-left: 20px;
+}
+.button:hover {
+    color: aqua;
+}
+
+.image {
+    height: 50px;
+}

@@ -1,107 +1,90 @@
-import React from "react";
+import React, { useState } from "react";
+// import Axios from "axios";
 import {
     Container,
-    Image,
     Row,
     Col,
     InputGroup,
     Form,
-    Button
+    Button,
+    Modal,
+    Nav
 } from 'react-bootstrap'
-import { ILLUST_LOGIN } from '../asset'
 import { Link } from 'react-router-dom'
 
-class RegisterPage extends React.Component {
-    render() {
-        return (
-            <Container fluid className="bg-dark px-5 m-0" style={styles.container}>
-                <Row style={styles.rowPadding}>
-                    <Col style={styles.illLogin}>
-                        <Image src={ILLUST_LOGIN} style={styles.imgIllust} />
-                    </Col>
-                    <Col style={styles.contLogin}>
-                        <Row style={styles.formLogin}>
-                            <Col lg={12} style={styles.Login}>Create Account</Col>
-                            <Col lg={12}>
-                                Username
-                                <InputGroup className="mb-3">
-                                    <Button variant="light" id="button-addon1" disabled="false">
-                                    <i class="fa-solid fa-user"></i>
-                                    </Button>
-                                    <Form.Control
-                                        aria-label="Example text with button addon"
-                                        aria-describedby="basic-addon1"
-                                        type="email" placeholder="Enter Email"
-                                    />
-                                </InputGroup>
-                                Password
-                                <InputGroup className="mb-3">
-                                    <Button variant="light" id="button-addon1" disabled="false">
-                                    <i class="fa-solid fa-eye-slash"></i>
-                                    </Button>
-                                    <Form.Control
-                                        aria-label="Example text with button addon"
-                                        aria-describedby="basic-addon1"
-                                        type="password" placeholder="Enter Password"
-                                    />
-                                </InputGroup>
-                                <Button variant="outline-info">Sign Up</Button>
-                                <p className="py-3">
-                                    Did have an account yet ? 
-                                    <Button variant="outline-info" as={Link} to="/login" style={styles.buttonSignUp}> Sign In </Button>
-                                </p>
-                            </Col>
-                        </Row>
-                    </Col>
-                </Row>
-            </Container>
-        )
-    }
-}
-const styles = {
-    container: {
-        backgroundColor: '#3f414f'
-    },
-    illLogin: {
-        display: 'flex',
-        justifyContent: 'center',
-        padding: '55px 0'
-    },
-    contLogin:{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems :'center'
-    },
-    formLogin: {
-        display: 'flex',
-        justifyContent: 'center',
-        fontWeight: '450',
-        padding : '35px 30px',
-        color: 'white',
-        backgroundColor: '#3f414f',
-        width : '75%',
-        height : '70%',
-        border : '1px solid white',
-        borderRadius : '10px'
-    },
-    imgIllust: {
-        width: '50vw',
-        padding: '0 80px'
-    },
+export default function RegisterPage() {
+    const [error, setError] = useState(false)
+    const handleClose = () => setError(false);
 
-    Login: {
-        display: 'flex',
-        justifyContent: 'center',
-        fontSize: '36px',
-        fontWeight: '650',
-    },
-    buttonSignUp : {
-        padding: '0 5px',
-        margin : '0 5px',
-        border : 'none'
-    },
-    rowPadding : {
-        padding : '35px 0'
+    const onSign = () => {
+        let username = document.getElementById('reg-username').value;
+        let email = document.getElementById('reg-email').value;
+        let password = document.getElementById('reg-password').value;
+        let confirmPw = document.getElementById('reg-passwordConfirm').value
+
+        if (!username || !email || !password || !confirmPw) {
+            return setError(true)
+        }
+
     }
+    return (
+        <Container fluid className="cont-bg">
+            <Row className="container-general">
+                <Col className="cont-register">
+                    <Row className="form-login">
+                        <Col lg={12} className="text-login">Create Account</Col>
+                        <Col lg={12}>
+
+                            <Modal show={error} onHide={handleClose}>
+                                <Modal.Body className="modal-body">Please fill all form !</Modal.Body>
+                            </Modal>
+
+                            Username
+                            <InputGroup className="mb-3">
+                                <Button variant="light" id="button-addon1" disabled="true">
+                                    <i class="fa-solid fa-at"></i>
+                                </Button>
+                                <Form.Control type="email" placeholder="Input your username" id="reg-username" />
+
+                            </InputGroup>
+
+
+
+                            Email
+                            <InputGroup className="mb-3">
+                                <Button variant="light" id="button-addon1" disabled="true">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </Button>
+                                <Form.Control type="email" placeholder="Input your Email" id="reg-email" />
+                            </InputGroup>
+
+                            Password
+                            <InputGroup className="mb-3">
+                                <Button variant="light" id="button-addon1" disabled="true">
+                                    <i class="fa-solid fa-key"></i>
+                                </Button>
+                                <Form.Control type="password" placeholder="Create your password" id="reg-password" />
+                            </InputGroup>
+
+                            Confirm Password
+                            <InputGroup className="mb-3">
+                                <Button variant="light" id="button-addon1" disabled="true">
+                                    <i class="fa-solid fa-shield-halved"></i>
+                                </Button>
+                                <Form.Control type="password" placeholder="Confirm your password" id="reg-passwordConfirm" />
+                            </InputGroup>
+
+                            <Button variant="outline-info" onClick={onSign}>Sign Up</Button>
+                            <p className="text-ask py-3">
+                                Have an account yet ?
+                                <Nav as={Link} to="/login" className="btn-sign-up"> Login </Nav>
+                            </p>
+                        </Col>
+                    </Row>
+                </Col>
+            </Row>
+
+
+        </Container>
+    )
 }
-export default RegisterPage

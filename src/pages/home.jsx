@@ -5,14 +5,15 @@ import {
     Col,
 } from 'react-bootstrap'
 
-class HomePage extends React.Component{
-    render () {
+import "./stylePages.css"
+
+export default function HomePage() {
         return (
-            <Container fluid style={styles.cont}>
+            <Container fluid className="cont-bg">
                 <Row>
-                    <Col style={styles.home}>
-                        <h1 style={styles.title}>The Powerfull Shopping Shoes in the World !</h1>
-                        <p style={styles.pfont}>Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+                    <Col className="container-general container-home">
+                        <h1 className="home-heading">The Powerfull Shopping Shoes in the World !</h1>
+                        <p className="home-p">Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
                             Eligendi reprehenderit quasi accusantium dicta, temporibus cumque? 
                             Sunt voluptate beatae quia deserunt maiores ab dicta incidunt enim, 
                             voluptatibus necessitatibus repudiandae quaerat? A.</p>
@@ -20,39 +21,4 @@ class HomePage extends React.Component{
                 </Row>
             </Container>
         )
-    }
 }
-
-const styles = {
-    cont : {
-        background : "url(https://images.pexels.com/photos/2300334/pexels-photo-2300334.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat center",
-        backgroundSize : 'cover',
-        height : '100vh',
-        display : 'flex',
-        justifyContent : 'center'
-    },
-    home : {
-        backgroundColor : 'rgba(0,0,27,0.8)',
-        display : 'flex',
-        justifyContent : 'center',
-        flexDirection :'column',
-        alignItems : 'center',
-        color : 'white',
-        fontSize : '54px',
-        fontWeight : '700',
-        height : '100vh',
-        width : '100vw',
-        padding : '0 300px',
-    },
-    pfont : {
-        fontSize : '18px',
-        fontWeight : '300',
-        textAlign: 'center'
-    },
-    title : {
-        textAlign: 'center',
-        padding : '30px 70px'
-    }
-    
-}
-export default HomePage
