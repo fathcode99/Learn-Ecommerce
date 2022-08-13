@@ -4,9 +4,6 @@ import {
     Container,
     Row,
     Col,
-    InputGroup,
-    Form,
-    Button,
     Modal,
     Nav
 } from 'react-bootstrap'
@@ -16,11 +13,6 @@ import { useSelector, useDispatch } from 'react-redux'
 export default function LoginPages() {
     const state = useSelector((state) => state.userReducer)
     const dispatch = useDispatch()
-
-    const [visible, setVisible] = useState(true)
-    const onVisible = () => {
-        setVisible(!visible)
-    }
 
     // Authentication
     const [errorUsername, setErrorUsername] = useState(false)
@@ -65,7 +57,7 @@ export default function LoginPages() {
     }
 
     if (state.username) {
-        return( <Navigate to="/" />)
+        return (<Navigate to="/" />)
     }
     return (
         <div>
@@ -80,27 +72,18 @@ export default function LoginPages() {
                     <Col className="cont-login">
                         <Row className="form-login">
                             <Col lg={12} className="text-login">Hello, welcome back !</Col>
-                            <Col lg={12}>
-                                <label className="mt-2">Username</label>
-                                <InputGroup >
-                                    <Button variant="light" id="button-addon1">
-                                        <i className="fa-solid fa-user"></i>
-                                    </Button>
-                                    <Form.Control type="email" placeholder="Username / Email" id="username" />
-                                </InputGroup>
-                                {errorUsername ? <p className="p-error">Please input your Email Account !</p> : ''}
+                            <Col lg={12} className="input-box">
+                                <div className="input-box-1">
+                                    <label className="mt-0 fs-6">Username {errorUsername ? <b className="p-error"> Please input your Username !</b> : ''}</label> 
+                                    <input className="input-style" type="text" placeholder="Username" id="username" />
+                                </div>
+                                
+                                <div className="input-box-1 mt-1">
+                                    <label className="mt-0 fs-6">Password {errorPassword ? <b className="p-error"> Please input your Password !</b> : ''}</label>  
+                                    <input className="input-style" type="password" placeholder="Username" id="password" />
+                                </div>
 
-                                <label className="mt-2">Password</label>
-                                <InputGroup >
-                                    <Button variant="light" id="button-addon1" onChange={onVisible}>
-                                        {visible ? <i className="fa-solid fa-key"></i> : <i className="fa-solid fa-user"></i>}
-                                    </Button>
-
-                                    <Form.Control type="password" placeholder="Password" id="password" />
-                                </InputGroup>
-                                {errorPassword ? <p className="p-error">Please input your Password !</p> : ''}
-
-                                <Button className="mt-4" variant="outline-info" onClick={onSign}>Login</Button>
+                                <button className="btn-style mt-4" onClick={onSign}>Login</button>
 
                                 <p className="text-ask py-3">
                                     Don't have an account yet ?

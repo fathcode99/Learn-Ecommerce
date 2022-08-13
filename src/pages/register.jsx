@@ -4,9 +4,6 @@ import {
     Container,
     Row,
     Col,
-    InputGroup,
-    Form,
-    Button,
     Nav
 } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
@@ -75,7 +72,7 @@ export default function RegisterPage() {
             return (
                 setErrorUsername(false), setErrorEmail(false), setErrorPassword(false), setErrorConfirmPw(false)
             )
-        } 
+        }
     }
 
     return (
@@ -84,52 +81,35 @@ export default function RegisterPage() {
                 <Col className="cont-register">
                     <Row className="form-login">
                         <Col lg={12} className="text-login">Create Account</Col>
-                        <Col lg={12}>
+                        <Col lg={12} className="input-box">
 
                             {/* <Modal show={error} onHide={handleClose}>
                                 <Modal.Body className="modal-body">Please fill all form !</Modal.Body>
                             </Modal> */}
 
-                            <label className="mt-1">Username</label>
-                            <InputGroup>
-                                <Button variant="light" id="button-addon1" disabled="true">
-                                    <i className="fa-solid fa-at"></i>
-                                </Button>
-                                <Form.Control type="email" placeholder="Input your username" id="reg-username" />
-                            </InputGroup>
-                            {errorUsername ? <p className="p-error">Please create your username !</p> : ''}
+                            <div className="input-box-1 mt-1">
+                                <label className="mt-0 fs-6">Username {errorUsername ? <b className="p-error">Please create your username !</b> : ''} </label>
+                                <input className="input-style" type="email" placeholder="Create Username" id="reg-username" />
+                            </div>
 
+                            <div className="input-box-1 mt-1">
+                                <label className="mt-0 fs-6">Email {errorEmail ? <b className="p-error">Please input your Email account !</b> : ''} </label>
+                                <input className="input-style" type="email" placeholder="Input your email" id="reg-email" />
+                            </div>
 
-                            <label className="mt-1">Email</label>
-                            <InputGroup>
-                                <Button variant="light" id="button-addon1" disabled="true">
-                                    <i className="fa-solid fa-envelope"></i>
-                                </Button>
-                                <Form.Control type="email" placeholder="Input your Email" id="reg-email" />
-                            </InputGroup>
-                            {errorEmail ? <p className="p-error">Please input your Email account !</p> : ''}
+                            <div className="input-box-1 mt-1">
+                                <label className="mt-0 fs-6">Create Password {errorPassword ? <b className="p-error">Please create your password !</b> : ''} </label>
+                                <input className="input-style" type="email" placeholder="Create your password" id="reg-password" />
+                            </div>
 
-                            <label className="mt-1">Create Password</label>
-                            <InputGroup>
-                                <Button variant="light" id="button-addon1" disabled="true">
-                                    <i className="fa-solid fa-key"></i>
-                                </Button>
-                                <Form.Control type="password" placeholder="Create your password" id="reg-password" />
-                            </InputGroup>
-                            {errorPassword ? <p className="p-error">Please create your password !</p> : ''}
+                            <div className="input-box-1 mt-1">
+                                <label className="mt-0 fs-6">Confirm Password {errorConfirmPw ? <b className="p-error">Please confirm your password !</b> : ''} </label>
+                                <input className="input-style" type="email" placeholder="Confirm your password" id="reg-passwordConfirm" />
+                            </div>
 
-                            <label className="mt-1">Confirm Password</label>
-                            <InputGroup>
-                                <Button variant="light" id="button-addon1" disabled="true">
-                                    <i className="fa-solid fa-shield-halved"></i>
-                                </Button>
-                                <Form.Control type="password" placeholder="Confirm your password" id="reg-passwordConfirm" />
-                            </InputGroup>
-                            {errorConfirmPw ? <p className="p-error">Please confirm your password account !</p> : ''}
-
-                            <Button variant="outline-info" onClick={onSign} className="mt-2">Sign Up</Button>
+                            <button className="btn-style mt-4" onClick={onSign}>Sign Up</button>
                             <p className="text-ask py-3">
-                                Have an account yet ?
+                                Have an account ?
                                 <Nav as={Link} to="/login" className="btn-sign-up"> Login </Nav>
                             </p>
                         </Col>

@@ -44,11 +44,34 @@
     color: #00dbff;
     width: 60%;
     height: auto;
-    border: 1px solid white;
+    border: 1px solid aqua;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(8px);
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.9) ;
+}
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+}
+.input-box-1 {
+    display: flex;
+    flex-direction: column;
+    border-left: 3px solid aqua;
+    border-right: 3px solid aqua;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0 12px;
+}
+
+.input-style {
+    border-radius: 0px;
+    height: 40px;
+    margin: 0;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: aqua;
 }
 
 .modal-body {
@@ -62,7 +85,20 @@
     justify-content: center;
     font-size: 36px;
     font-weight: 650;
-    padding: 30px 0;
+    padding: 10px 0;
+    font-size: 40px;
+}
+
+.btn-style {
+    background-color: transparent;
+    color: #00d4ff;
+    font-weight: 600;
+    border: 2px solid #00d4ff;
+    height: 40px;
+}
+.btn-style:hover {
+    background-color: #00d4ff;
+    color: black;
 }
 
 .btn-sign-up {
