@@ -1,17 +1,29 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux"
 import {
     Navbar,
     Nav,
     Container,
-    Image
-
+    Image,
+    NavDropdown
 } from 'react-bootstrap'
 import { LOGO } from '../asset'
 import { Link } from 'react-router-dom'
 
+
 import "./NavBar.css"
 
 export default function NavigationBar() {
+    const state = useSelector((state) => state.userReducer)
+    const dispatch = useDispatch()
+
+    const onLogOut = () => {
+        localStorage.removeItem('idUser')
+        dispatch({
+            type: "LOGOUT"
+        })
+    }
+
     return (
         <Navbar fixed="top" className="navbar-general m-0">
             <Container fluid className="px-5 px-5">
@@ -27,16 +39,20 @@ export default function NavigationBar() {
                 </div>
 
                 <div className="container-login">
-                    <Nav className="me-auto navFont">
-                        <Nav className="navFont me-4" as={Link} to="/register">Register</Nav>
-                        <Nav className="navFont" as={Link} to="/Login">Login</Nav>
-                    </Nav>
-
-                    {/* <NavDropdown title="Login" id="collasible-nav-dropdown" style={styles.button}>
+                    {state.username ?
+                        <NavDropdown title={state.username} id="collasible-nav-dropdown" className="navFont">
                             <NavDropdown.Item as={Link} to="/login">Profile</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to="/">Logout</NavDropdown.Item>
-                        </NavDropdown> */}
-                    <button className="button"><i class="fa-brands fa-shopify"></i></button>
+                            <NavDropdown.Item onClick={onLogOut} as={Link} to="/">Logout</NavDropdown.Item>
+                        </NavDropdown>
+                        :
+                        <Nav className="me-auto navFont">
+                            <Nav className="navFont me-4" as={Link} to="/register">Register</Nav>
+                            <Nav className="navFont" as={Link} to="/login">Login</Nav>
+                        </Nav>
+                    }
+
+
+                    <button className="button"><i className="fa-brands fa-shopify"></i></button>
                 </div>
             </Container>
         </Navbar>

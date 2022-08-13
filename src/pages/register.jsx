@@ -93,7 +93,7 @@ export default function RegisterPage() {
                             <label className="mt-1">Username</label>
                             <InputGroup>
                                 <Button variant="light" id="button-addon1" disabled="true">
-                                    <i class="fa-solid fa-at"></i>
+                                    <i className="fa-solid fa-at"></i>
                                 </Button>
                                 <Form.Control type="email" placeholder="Input your username" id="reg-username" />
                             </InputGroup>
@@ -103,7 +103,7 @@ export default function RegisterPage() {
                             <label className="mt-1">Email</label>
                             <InputGroup>
                                 <Button variant="light" id="button-addon1" disabled="true">
-                                    <i class="fa-solid fa-envelope"></i>
+                                    <i className="fa-solid fa-envelope"></i>
                                 </Button>
                                 <Form.Control type="email" placeholder="Input your Email" id="reg-email" />
                             </InputGroup>
@@ -112,7 +112,7 @@ export default function RegisterPage() {
                             <label className="mt-1">Create Password</label>
                             <InputGroup>
                                 <Button variant="light" id="button-addon1" disabled="true">
-                                    <i class="fa-solid fa-key"></i>
+                                    <i className="fa-solid fa-key"></i>
                                 </Button>
                                 <Form.Control type="password" placeholder="Create your password" id="reg-password" />
                             </InputGroup>
@@ -121,7 +121,7 @@ export default function RegisterPage() {
                             <label className="mt-1">Confirm Password</label>
                             <InputGroup>
                                 <Button variant="light" id="button-addon1" disabled="true">
-                                    <i class="fa-solid fa-shield-halved"></i>
+                                    <i className="fa-solid fa-shield-halved"></i>
                                 </Button>
                                 <Form.Control type="password" placeholder="Confirm your password" id="reg-passwordConfirm" />
                             </InputGroup>
