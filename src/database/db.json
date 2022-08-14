@@ -55,7 +55,15 @@
             "password" : "admin123",
             "email" : "admin@gmail.com",
             "role" : "admin"
+        },
+        {
+            "id" : 2,
+            "username" : "admin1",
+            "password" : "user1234",
+            "email" : "user@gmail.com",
+            "role" : "admin"
         }
     ],
+    
     "history": []
 }

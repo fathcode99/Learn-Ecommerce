@@ -61,7 +61,6 @@ export default function LoginPages() {
     }
     return (
         <div>
-
             <Container fluid className="cont-bg">
 
                 <Modal show={state.errorLogin} onHide={handleCloseLogin}>
