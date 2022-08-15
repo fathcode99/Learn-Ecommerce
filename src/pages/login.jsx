@@ -27,7 +27,7 @@ export default function LoginPages() {
 
     // const handleClose = () => setError(false);
 
-    const onSign = () => {
+    const onSign = async () => {
         let username = document.getElementById('username').value;
         let password = document.getElementById('password').value
 
@@ -39,7 +39,7 @@ export default function LoginPages() {
             return (setErrorPassword(true), setErrorUsername(false))
         }
 
-        Axios.get(`http://localhost:2000/user?username=${username}&password=${password}`)
+        await Axios.get(`http://localhost:2000/user?username=${username}&password=${password}`)
             .then(res => {
                 if (res.data.length === 0) {
                     dispatch({
