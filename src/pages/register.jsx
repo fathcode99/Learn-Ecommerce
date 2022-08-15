@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import Axios from "axios";
+import Axios from "axios";
 import {
     Container,
     Row,
@@ -7,9 +7,12 @@ import {
     Nav,
     Modal
 } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
+import { useSelector, useDispatch } from "react-redux/es/exports";
 
 export default function RegisterPage() {
+    const state = useSelector((state) => state.userReducer)
+    const dispatch = useDispatch()
 
     const [errorUsername, setErrorUsername] = useState(false)
     const [errorEmail, setErrorEmail] = useState(false)
@@ -18,16 +21,31 @@ export default function RegisterPage() {
     const [signUp, setSignUp] = useState(false)
     const handleClose = () => setSignUp(false);
 
-    // username : minimal 6 karakter dan tidak ada symbol
-    // email : harus valid
-    // password : minimal 6 karakter harus ada angka sama symbol
+    //error or valid username dan email
+    const [existUser, setExistUser] = useState(false)
+    const [existEmail, setExistEmail] = useState(false)
 
     const onSign = () => {
         console.log(errorUsername, errorEmail, errorPassword, errorConfirmPw)
-        if ( errorUsername  ||  errorEmail ||  errorPassword|| errorConfirmPw )
+        if (errorUsername || errorEmail || errorPassword || errorConfirmPw || existUser || existEmail)
             return setSignUp(true)
-        alert ('success')
 
+        let username = document.getElementById("reg-username").value
+        let email = document.getElementById("reg-email").value
+        let password = document.getElementById("reg-password").value
+        let confirmPw = document.getElementById("reg-confirmPw").value
+        let role = 'user'
+
+        if (!username || !email || !password || !confirmPw)
+            return setSignUp(true)
+            
+        Axios.post('http://localhost:2000/user', {username, email, password, role})
+        .then(res=> {
+            console.log(res.data)
+            dispatch({
+                type : 'SUCCESS_REG'
+            })
+        })
     }
 
     const userValid = (e) => {
@@ -38,7 +56,14 @@ export default function RegisterPage() {
         setErrorUsername(false)
 
         let username = document.getElementById("reg-username").value
-        if (!username) return setSignUp(true)
+        Axios.get(`http://localhost:2000/user?username=${username}`)
+            .then(res => {
+                if (res.data.length !== 0) {
+                    setExistUser(true)
+                } else {
+                    setExistUser(false)
+                }
+            })
     }
 
     const emailValid = (e) => {
@@ -46,6 +71,16 @@ export default function RegisterPage() {
         if (!regexEmail.test(e.target.value))
             return setErrorEmail(true)
         setErrorEmail(false)
+
+        let email = document.getElementById("reg-email").value
+        Axios.get(`http://localhost:2000/user?email=${email}`)
+            .then(res => {
+                if (res.data.length !== 0) {
+                    setExistEmail(true)
+                } else {
+                    setExistEmail(false)
+                }
+            })
     }
 
     const passValid = (e) => {
@@ -58,10 +93,14 @@ export default function RegisterPage() {
 
     const confirmPw = (e) => {
         let password = document.getElementById('reg-password').value;
-        let confirmPw = document.getElementById('reg-passwordConfirm').value
+        let confirmPw = document.getElementById('reg-confirmPw').value
         if (password !== confirmPw)
             return setErrorConfirmPw(true)
         setErrorConfirmPw(false)
+    }
+
+    if (state.successReg) {
+        return (<Navigate to="/login" />)
     }
 
     return (
@@ -79,13 +118,21 @@ export default function RegisterPage() {
                             <div className="input-box-1 mt-1">
                                 <label className="label-style m-0 fs-6">Username </label>
                                 <input className="input-style p-0" type="email" placeholder="Create Username" id="reg-username" onChange={(e) => userValid(e)} />
-                                {errorUsername ? <b className="p-error">Username min 6 character and without symbol</b> : ''}
+                                {errorUsername ? <b className="p-error">
+                                    Username min 6 character and without symbol</b>
+                                    :
+                                    existUser ? <b className="p-error">Username already exist</b> : ''
+                                }
+
                             </div>
 
                             <div className="input-box-1 mt-1">
                                 <label className="label-style m-0 fs-6">Email </label>
                                 <input className="input-style p-0" type="email" placeholder="Input your email" id="reg-email" onChange={(e) => emailValid(e)} />
-                                {errorEmail ? <b className="p-error">Please input your valid email</b> : ''}
+                                {errorEmail ? <b className="p-error">Please input your valid email</b>
+                                    :
+                                    existEmail ? <b className="p-error">Email already exist</b> : ''
+                                }
                             </div>
 
                             <div className="input-box-1 mt-1">
@@ -96,7 +143,7 @@ export default function RegisterPage() {
 
                             <div className="input-box-1 mt-1">
                                 <label className="label-style m-0 fs-6">Confirm Password </label>
-                                <input className="input-style p-0" type="password" placeholder="Confirm your password" id="reg-passwordConfirm" onChange={(e) => confirmPw(e)} />
+                                <input className="input-style p-0" type="password" placeholder="Confirm your password" id="reg-confirmPw" onChange={(e) => confirmPw(e)} />
                                 {errorConfirmPw ? <b className="p-error">Your confirm password doesn't match</b> : ''}
                             </div>
 

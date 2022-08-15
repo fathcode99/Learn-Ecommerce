@@ -134,6 +134,14 @@
     font-size: small;
 }
 
+.p-valid {
+    color: green;
+    padding: 0;
+    margin: 0 0 5px 0;
+    font-weight: 600;
+    font-size: small;
+}
+
 /* ////////////////// */
 
 .home-heading {

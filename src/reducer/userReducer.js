@@ -3,7 +3,8 @@ const initial_state = {
     username : "",
     password : "",
     role : "",
-    errorLogin : false
+    errorLogin : false,
+    successReg : false
 }
 
 const userReducer = (state = initial_state, action) => {
@@ -25,6 +26,11 @@ const userReducer = (state = initial_state, action) => {
             return {
                 ...state,
                 errorLogin : false
+            }
+        case 'SUCCESS_REG' :
+            return {
+                ...state,
+                successReg : true
             }
         case 'LOGOUT' :
             return initial_state
