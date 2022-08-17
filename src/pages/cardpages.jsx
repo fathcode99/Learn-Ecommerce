@@ -38,7 +38,7 @@ export default function Card() {
                         {carouselImg.map(item =>
                             <Carousel.Item>
                                 <img
-                                    className="d-block w-100"
+                                    className="d-block w-100 carousel-img"
                                     src={item.img}
                                     alt="First slide"
                                     style={{ height: "100vh" }}

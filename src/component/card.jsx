@@ -11,7 +11,7 @@ export default function Card(products) {
             </div>
             <div >
                 <p className="card-title">{products.data.name}</p>
-                <p className="card-price">IDR {products.data.price}</p>
+                <p className="card-price">IDR {products.data.price.toLocaleString()}</p>
             </div>
         </div>
     )

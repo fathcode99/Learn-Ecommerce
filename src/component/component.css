@@ -1,7 +1,7 @@
 .navbar-general {
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(8px);
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15) ;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
 }
 
 .container-menu {
@@ -24,6 +24,7 @@
     text-decoration: none;
     font-size: medium;
 }
+
 .navFont:hover {
     color: aqua;
 }
@@ -34,6 +35,7 @@
     color: white;
     margin-left: 20px;
 }
+
 .button:hover {
     color: aqua;
 }
@@ -51,15 +53,22 @@
     width: 30vw;
     align-items: center;
 }
+
 .card-container:hover {
     border: 1px solid aqua;
     scale: 1.01;
 }
+
 .card-container-img {
     background-color: black;
     border-radius: 10px 10px 0 0;
-    height: 55vh;
+    height: 65vh;
     overflow: hidden;
+}
+
+.card-img {
+    height: 65vh;
+    object-fit: cover;
 }
 
 .card-title {
@@ -71,6 +80,7 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 .card-price {
     padding: 0 10px 10px 10px;
     font-weight: 600;
@@ -85,9 +95,11 @@
     padding: 30px 50px;
     border-top: 2px solid aqua;
 }
+
 .footer-container:hover {
     color: aqua;
 }
+
 .heading-footer {
     font-weight: 700;
 }
