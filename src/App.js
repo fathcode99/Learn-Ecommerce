@@ -2,8 +2,10 @@ import React, { useEffect } from "react";
 import { Routes, Route } from 'react-router-dom';
 import Axios from 'axios'
 import { useDispatch } from "react-redux/es/exports";
-// import Nav Bar
+
+// import Component
 import NavigationBar from './component/NavigationBar';
+
 
 // import pages
 import HomePages from './pages/home';

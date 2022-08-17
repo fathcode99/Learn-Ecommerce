@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap"
 
 import CardProduct from '../component/card'
+import Footer from '../component/footer'
 import "./stylePages.css"
 
 export default function Card() {
@@ -40,7 +41,7 @@ export default function Card() {
                                     className="d-block w-100"
                                     src={item.img}
                                     alt="First slide"
-                                    style={{height: "100vh"}}
+                                    style={{ height: "100vh" }}
                                 />
                                 <Carousel.Caption className="text-slide-box">
                                     <h3 className="text-slide">{item.title}</h3>
@@ -65,6 +66,7 @@ export default function Card() {
                         />
                     )}
                 </Col>
+                <Footer />
             </Row>
         </Container>
     )

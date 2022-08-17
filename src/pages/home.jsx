@@ -3,10 +3,8 @@ import {
     Container,
     Row,
     Col,
-    Nav
 } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
-
 import "./stylePages.css"
 // import NavigationBar from '../component/NavigationBar';
 
@@ -22,7 +20,10 @@ export default function HomePage() {
                             Eligendi reprehenderit quasi accusantium dicta, temporibus cumque?
                             Sunt voluptate beatae quia deserunt maiores ab dicta incidunt enim,
                             voluptatibus necessitatibus repudiandae quaerat? A.</p>
-                            <Nav as={Link} to="/product" className="btn-style px-2"> GET START </Nav>
+                        
+                        <Link as={Link} to="/product">
+                            <button className="btn-style">Get Start</button>
+                        </Link>
                     </Col>
                 </Row>
             </Container>
