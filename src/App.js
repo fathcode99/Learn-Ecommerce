@@ -9,6 +9,7 @@ import NavigationBar from './component/NavigationBar';
 import HomePages from './pages/home';
 import LoginPages from './pages/login';
 import RegisterPages from './pages/register';
+import Product from './pages/cardpages'
 
 
 export default function App() {
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/" element={<HomePages />} />
         <Route path="/login" element={<LoginPages />} />
         <Route path="/register" element={<RegisterPages />} />
+        <Route path="/product" element={<Product />} />
       </Routes>
     </div>
   );

@@ -4,7 +4,16 @@ const initial_state = {
     password : "",
     role : "",
     errorLogin : false,
-    successReg : false
+    successReg : false,
+    // products : {
+    //     id : null,
+    //     name : "",
+    //     category : "",
+    //     brand : "",
+    //     rating : "",
+
+
+    // }
 }
 
 const userReducer = (state = initial_state, action) => {

@@ -11,7 +11,7 @@ import { LOGO } from '../asset'
 import { Link } from 'react-router-dom'
 
 
-import "./NavBar.css"
+import "./component.css"
 
 export default function NavigationBar() {
     const state = useSelector((state) => state.userReducer)
@@ -33,7 +33,7 @@ export default function NavigationBar() {
                     </Navbar.Brand>
                     <Nav>
                         <Nav className="navFont me-4" as={Link} to="/">Home</Nav>
-                        <Nav className="navFont me-4" as={Link} to="/">Best Product</Nav>
+                        <Nav className="navFont me-4" as={Link} to="/product">Product</Nav>
                         <Nav className="navFont me-4" as={Link} to="/">Best Selling</Nav>
                     </Nav>
                 </div>

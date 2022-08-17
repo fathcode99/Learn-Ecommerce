@@ -41,3 +41,39 @@
 .image {
     height: 50px;
 }
+
+/* CARD  */
+.card-container {
+    border: 1px solid white;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 0;
+    width: 30vw;
+    align-items: center;
+}
+.card-container:hover {
+    border: 1px solid aqua;
+    scale: 1.01;
+}
+.card-container-img {
+    background-color: black;
+    border-radius: 10px 10px 0 0;
+    height: 55vh;
+    overflow: hidden;
+}
+
+.card-title {
+    padding: 10px;
+    font-weight: 400;
+    color: white;
+    border-top: 1px solid white;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.card-price {
+    padding: 0 10px 10px 10px;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+}
