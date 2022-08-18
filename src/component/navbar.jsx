@@ -8,16 +8,18 @@ import './component.css'
 
 export default function Navbar() {
     return (
-        <div className="navbar-main-container">
-            <Container className="navbar-style">
+        <div className="navbar-main-container p-0">
+            <Container className="navbar-style p-0">
                 <Row >
                     <Col lg={4} className="nav-brand-style">BRANDNAME</Col>
-                    <Col lg={1}>HOME</Col>
-                    <Col lg={1}>SHOP</Col>
-                    <Col lg={1}>PRODUCTS</Col>
-                    <Col lg={2}>ABOUT US</Col>
-                    <Col lg={2}>CONTACT US</Col>
-                    <Col lg={1}></Col>
+                    <Col lg={8} className="nav-menu-style">
+                        <div>HOME</div>
+                        <div>SHOP</div>
+                        <div>PRODUCTS</div>
+                        <div>ABOUT US</div>
+                        <div>CONTACT US</div>
+                        <div></div>
+                    </Col>
                 </Row>
             </Container>
         </div>
