@@ -12,6 +12,7 @@ import HomePages from './pages/home';
 import LoginPages from './pages/login';
 import RegisterPages from './pages/register';
 import Product from './pages/cardpages'
+import DetailPages from './pages/detail'
 
 
 export default function App() {
@@ -35,6 +36,7 @@ export default function App() {
         <Route path="/login" element={<LoginPages />} />
         <Route path="/register" element={<RegisterPages />} />
         <Route path="/product" element={<Product />} />
+        <Route path="/detail/:id" element={<DetailPages />} />
       </Routes>
     </div>
   );

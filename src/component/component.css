@@ -45,6 +45,9 @@
 }
 
 /* CARD  */
+.link-detail {
+    text-decoration: none;
+}
 .card-container {
     border: 1px solid white;
     border-radius: 10px;
@@ -79,6 +82,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    text-decoration: none;
 }
 
 .card-price {
@@ -86,6 +90,7 @@
     font-weight: 600;
     color: white;
     margin: 0;
+    text-decoration: none;
 }
 
 /* FOOTER */

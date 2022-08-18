@@ -42,6 +42,7 @@ export default function Card() {
                                     src={item.img}
                                     alt="First slide"
                                     style={{ height: "100vh" }}
+                                    key={item.id}
                                 />
                                 <Carousel.Caption className="text-slide-box">
                                     <h3 className="text-slide">{item.title}</h3>
