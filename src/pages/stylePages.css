@@ -220,3 +220,26 @@
     color: white;
     font-weight: 700;
 }
+
+.container-detail {
+    padding: 90px 30px 0 30px;
+}
+
+.detail-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: aqua;
+    border-bottom: 2px solid aqua;
+}
+
+.detail-p {
+    font-size: 18px;
+    font-weight: 200;
+    color: white;
+    margin: 30px 0;
+}
+.detail-stock {
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+}
