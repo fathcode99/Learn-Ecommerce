@@ -1,10 +1,25 @@
-.cont-bg {
+.home-bg {
+    overflow: hidden;
     background: url(https://images.pexels.com/photos/2300334/pexels-photo-2300334.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat center;
     background-size: cover;
-    height: 100vh;
+    height: 30vh;
     display: flex;
     justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 800;
+    font-size: 36px;
 }
+
+.img-front {
+    background-color:rgba(0, 0, 27, 0.7);
+    height: 30vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
 .container-general {
     background-color: rgba(0, 0, 27, 0.2);

@@ -4,7 +4,8 @@ import Axios from 'axios'
 import { useDispatch } from "react-redux/es/exports";
 
 // import Component
-import NavigationBar from './component/NavigationBar';
+import NavBar from './component/navbar'
+import NavLogin from './component/navlogin'
 
 
 // import pages
@@ -30,7 +31,8 @@ export default function App() {
 
   return (
     <div>
-      <NavigationBar />
+      <NavLogin />
+      <NavBar />
       <Routes>
         <Route path="/" element={<HomePages />} />
         <Route path="/login" element={<LoginPages />} />

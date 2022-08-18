@@ -1,9 +1,40 @@
-.navbar-general {
-    background-color: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+* {
+    font-family: 'Roboto', sans-serif;
 }
 
+/* NAV-LOGIN STYLING */
+.nav-top-main-container {
+    background-color: black;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    font-size: small;
+    height: 7vh;
+    color: white;
+}
+
+/* //////////////////// */
+.navbar-main-container {
+    background-color: wheat;
+    height: 12vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-weight: 600;
+    font-size: medium;
+}
+
+.nav-brand-style {
+    text-align: left;
+    font-weight: 900;
+    color: #4db119;
+    font-size: larger;
+}
+/* //////////////////// */
+
+
+/* OLD */
 .container-menu {
     display: flex;
     justify-content: space-between;
@@ -11,23 +42,6 @@
     height: fit-content;
 }
 
-.container-login {
-    display: flex;
-    justify-content: left;
-    align-Items: center;
-    height: fit-content;
-}
-
-.navFont {
-    color: white;
-    font-weight: 600;
-    text-decoration: none;
-    font-size: medium;
-}
-
-.navFont:hover {
-    color: aqua;
-}
 
 .button {
     border: none;
