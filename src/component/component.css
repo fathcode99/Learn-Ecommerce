@@ -4,32 +4,43 @@
 
 /* NAV-LOGIN STYLING */
 .nav-top-main-container {
-    background-color: black;
+    background-color: #0c0026;
     margin: 0;
     padding: 0;
     display: flex;
     align-items: center;
-    font-weight: 400;
+    font-weight: 700;
     font-size: small;
-    height: 7vh;
+    height: 5vh;
     color: white;
+    text-decoration: none;
 }
 
-/* //////////////////// */
+.nav-top-text {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-top-text:hover {
+    color: #00dbff;
+    text-decoration: none;
+}
+
+/* /////////NAV-BAR/////////// */
 .navbar-main-container {
-    background-color: white;
-    height: 12vh;
+    background: linear-gradient(90deg, rgba(0,219,255,1) 0%, rgba(0,129,255,1) 100%);
+    height: 7vh;
     display: flex;
     align-items: center;
     text-align: center;
     font-weight: 600;
-    font-size: medium;
+    font-size: small;
 }
 
 .nav-brand-style {
     text-align: left;
     font-weight: 900;
-    color: #4db119;
+    color: black;
     font-size: larger;
 }
 
@@ -37,24 +48,34 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: black;
+}
+
+.nav-text-menu {
+    color: black;
+    text-decoration: none;
+}
+
+.nav-text-menu:hover {
+    color: darkblue;
 }
 
 /* CARD  */
 .link-detail {
     text-decoration: none;
 }
+
 .card-container {
     margin: 10px;
     align-items: center;
     padding: 10px 10px 30px 10px;
-    background-color: gainsboro;
-    position:relative ;
+    background-color: rgba(21, 10, 48, 0.1);
+    position: relative;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.9);
 }
 
 .card-container:hover {
-    border: 1px solid white;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5) ;
-    /* scale: 1.01; */
+    border: 1px solid #00dbff;
 }
 
 .card-container-img {
@@ -66,6 +87,7 @@
 .card-img {
     height: 25vh;
     object-fit: cover;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.9);
 }
 
 .card-title {
@@ -73,8 +95,7 @@
     margin: 0;
     font-weight: 600;
     font-size: small;
-    color: black;
-    border-top: 1px solid white;
+    color: white;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -84,17 +105,34 @@
 
 .card-price {
     font-weight: 500;
-    color: #4db119;;
+    color: #00dbff;
     margin: 0;
     text-decoration: none;
     font-size: smaller;
     text-align: center;
 }
+
 .card-star {
-    color: red;
+    color: gainsboro;
     font-size: 7px;
     text-align: center;
 }
+
+/* FOOTER */
+.bg-footer {
+    background-color: black;
+    padding-top: 20px;
+}
+
+.footer-container {
+    color: white;
+    padding: 30px 50px;
+}
+
+.heading-footer {
+    font-weight: 700;
+}
+
 
 /* //////////////////// */
 
@@ -121,22 +159,4 @@
 
 .image {
     height: 50px;
-}
-
-
-
-/* FOOTER */
-.footer-container {
-    background-color: black;
-    color: white;
-    padding: 30px 50px;
-    border-top: 2px solid aqua;
-}
-
-.footer-container:hover {
-    color: aqua;
-}
-
-.heading-footer {
-    font-weight: 700;
 }

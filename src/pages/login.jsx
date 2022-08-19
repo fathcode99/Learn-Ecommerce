@@ -13,7 +13,11 @@ import { useSelector, useDispatch } from 'react-redux'
 export default function LoginPages() {
     const state = useSelector((state) => state.userReducer)
     const dispatch = useDispatch()
-
+    
+    const [pwVisible, setPwVisible] = useState(false)
+    const onPwVisible = () => {
+        setPwVisible(!pwVisible)
+    }
     // Authentication
     const [errorUsername, setErrorUsername] = useState(false)
     const [errorPassword, setErrorPassword] = useState(false)
@@ -59,40 +63,44 @@ export default function LoginPages() {
     if (state.username) {
         return (<Navigate to="/" />)
     }
+    
     return (
-        <div>
-            <Container fluid className="cont-bg">
+        <div className="login-bg">
+            <div className="img-login-front">
 
                 <Modal show={state.errorLogin} onHide={handleCloseLogin}>
-                    <Modal.Body className="modal-body">This account is doesn't exist. Please Sign Up first !</Modal.Body>
+                    <Modal.Body className="modal-body"><i class="fa-solid fa-triangle-exclamation px-2"></i>This account is doesn't exist. Please Sign Up first !</Modal.Body>
                 </Modal>
 
-                <Row className="container-general">
-                    <Col className="cont-login">
-                        <Row className="form-login">
-                            <Col lg={12} className="text-login">Hello, welcome back !</Col>
-                            <Col lg={12} className="input-box">
-                                <div className="input-box-1">
-                                    <label className="mt-0 fs-6">Username {errorUsername ? <b className="p-error"> Please input your Username !</b> : ''}</label> 
-                                    <input className="input-style" type="text" placeholder="Username" id="username" />
-                                </div>
-                                
-                                <div className="input-box-1 mt-1">
-                                    <label className="mt-0 fs-6">Password {errorPassword ? <b className="p-error"> Please input your Password !</b> : ''}</label>  
-                                    <input className="input-style" type="password" placeholder="Username" id="password" />
-                                </div>
+                <div className="login-from-container">
+                    <div className="login-text-title">Hello, welcome back !</div>
+                    <div>
+                        <div className="login-box-from">
+                            <label>Username </label>
+                            <input className="login-input px-0" style={{width:"100%"}} type="text" placeholder="Username" id="username" />
+                            {errorUsername ? <b className="p-error"> Please input your Username !</b> : ''}
+                        </div>
 
-                                <button className="btn-style mt-4" onClick={onSign}>Login</button>
+                        <div className="login-box-from">
+                            <label >Password </label>
+                            <div className="login-box-form-pw">
+                                <input className="login-input px-0" style={{width:"90%"}} type={pwVisible ? "text" :  "password"} placeholder="Password" id="password" />
+                                <button className="login-input" style={{width:"10%"}} onClick={onPwVisible}>
+                                    <i class="fa-solid fa-eye p-0"></i>
+                                </button>
+                            </div>
+                            {errorPassword ? <b className="p-error"> Please input your Password !</b> : ''}
+                        </div>
 
-                                <p className="text-ask py-3">
-                                    Don't have an account yet ?
-                                    <Nav as={Link} to="/register" className="btn-sign-up"> Sign Up </Nav>
-                                </p>
-                            </Col>
-                        </Row>
-                    </Col>
-                </Row>
-            </Container>
+                        <button className="btn-style" onClick={onSign}>Login</button>
+
+                        <p className="text-ask py-3">
+                            Don't have an account yet ?
+                            <Nav as={Link} to="/register" className="btn-sign-up"> Sign Up </Nav>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

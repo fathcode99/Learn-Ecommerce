@@ -14,6 +14,12 @@ export default function RegisterPage() {
     const state = useSelector((state) => state.userReducer)
     const dispatch = useDispatch()
 
+    // visible password
+    const [pwVisible, setPwVisible] = useState(false)
+    const onPwVisible = () => {
+        setPwVisible(!pwVisible)
+    }
+
     const [errorUsername, setErrorUsername] = useState(false)
     const [errorEmail, setErrorEmail] = useState(false)
     const [errorPassword, setErrorPassword] = useState(false)
@@ -38,14 +44,14 @@ export default function RegisterPage() {
 
         if (!username || !email || !password || !confirmPw)
             return setSignUp(true)
-            
-        Axios.post('http://localhost:2000/user', {username, email, password, role})
-        .then(res=> {
-            console.log(res.data)
-            dispatch({
-                type : 'SUCCESS_REG'
+
+        Axios.post('http://localhost:2000/user', { username, email, password, role })
+            .then(res => {
+                console.log(res.data)
+                dispatch({
+                    type: 'SUCCESS_REG'
+                })
             })
-        })
     }
 
     const userValid = (e) => {
@@ -104,58 +110,61 @@ export default function RegisterPage() {
     }
 
     return (
-        <Container fluid className="cont-bg">
-            <Row className="container-general">
-                <Col className="cont-register">
-                    <Row className="form-login">
-                        <Col lg={12} className="text-login">Create Account</Col>
-                        <Col lg={12} className="input-box">
+        <div className="login-bg">
+            <div className="img-login-front">
+                <Modal show={signUp} onHide={handleClose}>
+                    <Modal.Body className="modal-body"><i class="fa-solid fa-triangle-exclamation px-2"></i>Please make sure all data is filled in and valid !</Modal.Body>
+                </Modal>
 
-                            <Modal show={signUp} onHide={handleClose}>
-                                <Modal.Body className="modal-body">Please make sure all data is filled in and valid !</Modal.Body>
-                            </Modal>
+                <div className="login-from-container">
+                    <div className="login-text-title">Create Account</div>
+                    <div>
+                        <div className="login-box-from">
+                            <label>Username </label>
+                            <input className="login-input px-0" type="email" placeholder="Create Username" id="reg-username" onChange={(e) => userValid(e)} />
+                            {errorUsername ? <b className="p-error">
+                                Username min 6 character and without symbol</b>
+                                :
+                                existUser ? <b className="p-error">Username already exist</b> : ''
+                            }
 
-                            <div className="input-box-1 mt-1">
-                                <label className="label-style m-0 fs-6">Username </label>
-                                <input className="input-style p-0" type="email" placeholder="Create Username" id="reg-username" onChange={(e) => userValid(e)} />
-                                {errorUsername ? <b className="p-error">
-                                    Username min 6 character and without symbol</b>
-                                    :
-                                    existUser ? <b className="p-error">Username already exist</b> : ''
-                                }
+                        </div>
 
+                        <div className="login-box-from">
+                            <label>Email </label>
+                            <input className="login-input px-0" type="email" placeholder="Input your email" id="reg-email" onChange={(e) => emailValid(e)} />
+                            {errorEmail ? <b className="p-error">Please input your valid email</b>
+                                :
+                                existEmail ? <b className="p-error">Email already exist</b> : ''
+                            }
+                        </div>
+
+                        <div className="login-box-from">
+                            <label >Password </label>
+                            <div className="login-box-form-pw">
+                                <input className="login-input px-0" style={{width:"90%"}} type={pwVisible ? "text" :  "password"} placeholder="Password" id="reg-password" onChange={(e) => passValid(e)} />
+                                <button className="login-input" style={{width:"10%"}} onClick={onPwVisible}>
+                                    <i class="fa-solid fa-eye p-0"></i>
+                                </button>
                             </div>
+                            {errorPassword ? <b className="p-error">Please include alphabet, symbol, and numeric</b> : ''}
+                        </div>
 
-                            <div className="input-box-1 mt-1">
-                                <label className="label-style m-0 fs-6">Email </label>
-                                <input className="input-style p-0" type="email" placeholder="Input your email" id="reg-email" onChange={(e) => emailValid(e)} />
-                                {errorEmail ? <b className="p-error">Please input your valid email</b>
-                                    :
-                                    existEmail ? <b className="p-error">Email already exist</b> : ''
-                                }
-                            </div>
+                        <div className="login-box-from">
+                            <label >Confirm Password </label>
+                            <input className="login-input px-0" type="password" placeholder="Confirm your password" id="reg-confirmPw" onChange={(e) => confirmPw(e)} />
+                            {errorConfirmPw ? <b className="p-error">Your confirm password doesn't match</b> : ''}
+                        </div>
 
-                            <div className="input-box-1 mt-1">
-                                <label className="label-style m-0 fs-6">Create Password  </label>
-                                <input className="input-style p-0" type="password" placeholder="Create your password" id="reg-password" onChange={(e) => passValid(e)} />
-                                {errorPassword ? <b className="p-error">Please include alphabet, symbol, and numeric</b> : ''}
-                            </div>
+                        <button className="btn-style" onClick={onSign} >Sign Up</button>
+                        <p className="text-ask py-3">
+                            Have an account ?
+                            <Nav as={Link} to="/login" className="btn-sign-up"> Login </Nav>
+                        </p>
+                    </div>
 
-                            <div className="input-box-1 mt-1">
-                                <label className="label-style m-0 fs-6">Confirm Password </label>
-                                <input className="input-style p-0" type="password" placeholder="Confirm your password" id="reg-confirmPw" onChange={(e) => confirmPw(e)} />
-                                {errorConfirmPw ? <b className="p-error">Your confirm password doesn't match</b> : ''}
-                            </div>
-
-                            <button className="btn-style mt-4" onClick={onSign} >Sign Up</button>
-                            <p className="text-ask py-3">
-                                Have an account ?
-                                <Nav as={Link} to="/login" className="btn-sign-up"> Login </Nav>
-                            </p>
-                        </Col>
-                    </Row>
-                </Col>
-            </Row>
-        </Container>
+                </div>
+            </div>
+        </div>
     )
 }
