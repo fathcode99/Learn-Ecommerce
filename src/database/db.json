@@ -221,48 +221,35 @@
           "id": 7,
           "name": "ADIDAS NMD R1",
           "price": 90000000,
+          "stock": 8,
           "qty": 1
         },
         {
           "id": 7,
           "name": "ADIDAS NMD R1",
           "price": 90000000,
-          "qty": 1
-        },
-        {
-          "id": 7,
-          "name": "ADIDAS NMD R1",
-          "price": 90000000,
-          "qty": 1
-        },
-        {
-          "id": 1,
-          "name": "URBAN CASUAL FASHION WHITE RED SNEAKER",
-          "price": 250000000,
-          "qty": 1
-        },
-        {
-          "id": 8,
-          "name": "ADIDAS TRAINER",
-          "price": 50000000,
-          "qty": 1
-        },
-        {
-          "id": 1,
-          "name": "URBAN CASUAL FASHION WHITE RED SNEAKER",
-          "price": 250000000,
-          "qty": 1
-        },
-        {
-          "id": 1,
-          "name": "URBAN CASUAL FASHION WHITE RED SNEAKER",
-          "price": 250000000,
+          "stock": 8,
           "qty": 1
         },
         {
           "id": 10,
           "name": "VANS BRANCO",
           "price": 50000000,
+          "stock": 12,
+          "qty": 1
+        },
+        {
+          "id": 1,
+          "name": "URBAN CASUAL FASHION WHITE RED SNEAKER",
+          "price": 250000000,
+          "stock": 13,
+          "qty": 1
+        },
+        {
+          "id": 1,
+          "name": "URBAN CASUAL FASHION WHITE RED SNEAKER",
+          "price": 250000000,
+          "stock": 13,
           "qty": 1
         }
       ]

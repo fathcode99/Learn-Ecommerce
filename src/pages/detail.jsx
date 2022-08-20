@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Axios from 'axios'
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 import {
     Container, Col, Row
@@ -14,6 +14,7 @@ import "./stylePages.css"
 
 export default function Detail() {
     const state = useSelector((state) => state.userReducer)
+    const dispatch = useDispatch()
 
     const [products, setProducts] = useState({})
 
@@ -25,6 +26,7 @@ export default function Detail() {
         Axios.get(`http://localhost:2000/products/${id}`)
             .then(res => {
                 setProducts(res.data)
+                
             })
     }, [id])
 
@@ -40,11 +42,12 @@ export default function Detail() {
         setQty(+e.target.value)
         let n = +e.target.value
         let maxQty = +products.stock
+
         if (n < +1) {
-            setQty(+0)
+            setQty()
         } else if (n > maxQty) {
             setQty(maxQty)
-        }        
+        }
     }
 
     const onCeckout = async () => {
@@ -56,14 +59,20 @@ export default function Detail() {
             id: products.id,
             name: products.name,
             price: products.price,
+            stock: products.stock,
             qty
         }
         tempCart.push(dataProducts)
-
+        
         await Axios.patch(`http://localhost:2000/user/${state.id}`, { cart: tempCart })
             .then(res => {
                 console.log(res.data)
+                dispatch({
+                    type : 'LOGIN',
+                    payload : res.data
+                })
             })
+        console.log(state.cart)
     }
 
     if (toLogin)
@@ -108,7 +117,7 @@ export default function Detail() {
                         </Col>
                         <Col>
                             <button className="btn-style me-2 mt-3" onClick={onCeckout} ><i className="fa-solid fa-cart-shopping px-2"></i>Add to Cart </button>
-                            <button className="btn-style"><i clasName="fa-solid fa-comment-dollar px-2"></i>Chat Seller </button>
+                            <button className="btn-style"><i className="fa-solid fa-comment-dollar px-2"></i>Chat Seller </button>
                         </Col>
                     </Col>
 
