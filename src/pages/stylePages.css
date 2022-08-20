@@ -194,7 +194,6 @@
     font-size: medium;
     text-decoration: none;
     align-items: center;
-    border: none;
     border-radius: .2rem;
     border: 1px solid white;
     padding: .2rem .5rem;
@@ -204,13 +203,32 @@
     border: 1px solid #00dbff;
     color: #00dbff;
 }
-
-/* MODAL */
-.modal-body {
-    background-color: rgba(21, 10, 48, 1);
-    backdrop-filter: blur(6px);
-    border: 1px solid red;
-    color: red;
+.btn-style-2 {
+    background-color: transparent;
+    color: white;
+    font-weight: 600;
+    font-size: medium;
+    text-decoration: none;
+    align-items: center;
+    border: none;
+    padding: .2rem .5rem;
+}
+.btn-style-2:hover {
+    color: #00dbff;
+}
+.btn-style-3 {
+    background-color: transparent;
+    color:rgba(21, 10, 48, 1);
+    font-weight: 600;
+    font-size: medium;
+    text-decoration: none;
+    align-items: center;
+    border: none;
+    padding: .2rem .5rem;
+}
+.btn-style-3:hover {
+    color: white;
+    
 }
 
 .btn-sign-up {
@@ -223,15 +241,31 @@
     font-size: medium;
     background-color: transparent;
 }
-
 .btn-sign-up:hover {
     color: #00dbff;
+    
 }
+
+.badge-cart {
+    background-color: transparent;
+    border: 1px solid #00dbff;
+    color: #00dbff;
+    border-radius: 2px;
+}
+/* MODAL */
+.modal-body {
+    background-color: rgba(21, 10, 48, 1);
+    backdrop-filter: blur(6px);
+    border: 1px solid red;
+    color: red;
+}
+
+
 
 /* DETAIL PAGES */
 .bg-detail {
     background-color: #04000e;
-    height: 100vh;
+    height:100%;
 }
 
 .heading-detail {
@@ -240,10 +274,11 @@
     margin-bottom: 0px;
     font-size:x-large;
     font-weight: 700;
-    border-bottom: 4px solid #00dbff;
+    border-bottom: 1px solid #00dbff;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 2px;
 }
 .detail-img-box {
     background-color: gainsboro;
@@ -329,5 +364,45 @@
     object-fit: cover;
 }
 
+/* CART SHOP */
+.cart-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(0,1,20,1) 0%, rgba(0,12,34,1) 100%);
+    padding: 3px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.9);
+    text-align: left;
+    color: white;
 
+}
 
+.cart-box-img {
+    background-color: black;
+    height: 20vh;
+    overflow: hidden;
+}
+/* /// */
+.cart-img {
+    height: 25vh;
+    object-fit: cover;
+    width: 25vw;
+}
+
+.cart-title {
+    width: 40vw;
+    color: white;
+}
+
+.cart-counter {
+    width: 10vw;
+    color: white;
+}
+.cart-price {
+    width: 15vw;
+    color: white;
+}
+.cart-close {
+    width: 5vw;
+    color: white;
+}

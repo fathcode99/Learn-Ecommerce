@@ -91,9 +91,13 @@ export default function LoginPages() {
 
                         <button className="btn-style" onClick={onSign}>Login</button>
 
-                        <p className="text-ask py-3">
+                        <p className="text-ask pt-3 m-0">
                             Don't have an account yet ?
                             <Nav as={Link} to="/register" className="btn-sign-up"> Sign Up </Nav>
+                        </p>
+                        <p className="text-ask ">
+                            Go to
+                            <Nav as={Link} to="/" className="btn-sign-up"> Home </Nav>
                         </p>
                     </div>
                 </div>

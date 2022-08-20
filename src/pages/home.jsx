@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Axios from 'axios'
 import { useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 import {
     Container,
     Row,
@@ -40,7 +41,7 @@ export default function HomePage() {
             <NavBar />
             <div className="home-bg text-front-bg img-front">
                 <div className="img-front p-0">
-                    <div>BEST PRODUCT</div>
+                    <div>SHOES PRODUCT</div>
                     <div className="p-img-front"><p>Lorem ipsum dolor sit amet</p></div>
                 </div>
             </div>
@@ -55,11 +56,14 @@ export default function HomePage() {
                         </Col>
                         <Col lg={6} className="search-bar-icon">
                             <input className="login-input" style={{ width: "100%" }} placeholder="Search" />
-                            <button className="btn-style">Search</button>
+                            <button className="btn-style-3"><i className="fa-solid fa-magnifying-glass"></i></button>
                         </Col>
-                        <Col lg={3} className="search-bar-icon">
-                            <div><i className="fa-solid fa-heart-circle-plus px-2"></i></div>
-                            <div><i className="fa-solid fa-cart-shopping px-2"></i></div>
+                        <Col lg={1}></Col>
+                        <Col lg={2} className="search-bar-icon">
+                            <button className="btn-style-3"><i className="fa-solid fa-heart-circle-plus px-2"></i></button>
+                            <Link as={Link} to="/cart">
+                                <button className="btn-style-3"><i className="fa-solid fa-cart-shopping px-2"></i></button>
+                            </Link>
                         </Col>
                     </Row>
 

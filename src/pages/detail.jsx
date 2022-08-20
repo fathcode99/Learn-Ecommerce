@@ -17,7 +17,7 @@ export default function Detail() {
 
     const [products, setProducts] = useState({})
 
-    const [qty, setQty] = useState(1)
+    const [qty, setQty] = useState(0)
     const [toLogin, setToLogin] = useState(false)
 
     let { id } = useParams();
@@ -38,13 +38,16 @@ export default function Detail() {
 
     const onQty = (e) => {
         setQty(+e.target.value)
+
         let n = +e.target.value
         let maxQty = +products.stock
         if (n < +1) {
-            setQty(+0)
+            setQty(0)
         } else if (n > maxQty) {
             setQty(maxQty)
-        }        
+        } else {
+            setQty(n)
+        }
     }
 
     const onCeckout = async () => {
@@ -56,13 +59,17 @@ export default function Detail() {
             id: products.id,
             name: products.name,
             price: products.price,
-            qty
+            images: products.images[0],
+            maxStock: products.stock,
+            qtyBuy: qty
         }
         tempCart.push(dataProducts)
-
         await Axios.patch(`http://localhost:2000/user/${state.id}`, { cart: tempCart })
             .then(res => {
-                console.log(res.data)
+                Axios.get(`http://localhost:2000/products/${id}`)
+                    .then(res => {
+                        setProducts(res.data)
+                    })
             })
     }
 
@@ -76,9 +83,9 @@ export default function Detail() {
             <Container>
                 <Row className="mt-3 mb-0">
                     <Col lg={12} className="heading-detail px-0">
-                        <label>DETAIL PRODUCT</label>
+                        <label>Detail Product</label>
                         <Link as={Link} to="/cart">
-                            <button className="btn-style"><i className="fa-solid fa-cart-shopping px-2"></i>My Cart</button>
+                            <button className="btn-style-2"><i className="fa-solid fa-cart-shopping px-2"></i>Cart</button>
                         </Link>
                     </Col>
                 </Row>
@@ -107,8 +114,10 @@ export default function Detail() {
                             <button className="btn-qty" onClick={onPlus} disabled={qty === products.stock ? true : false}>+</button>
                         </Col>
                         <Col>
-                            <button className="btn-style me-2 mt-3" onClick={onCeckout} ><i className="fa-solid fa-cart-shopping px-2"></i>Add to Cart </button>
-                            <button className="btn-style"><i clasName="fa-solid fa-comment-dollar px-2"></i>Chat Seller </button>
+                            <button className="btn-style me-2 mt-3" onClick={onCeckout} >
+                                <i className="fa-solid fa-cart-shopping px-2"></i>Add to Cart <badge className="badge-cart px-1 mx-1">{state.cart.length}</badge>
+                            </button>
+                            <button className="btn-style"><i className="fa-solid fa-comment-dollar px-2"></i>Chat Seller </button>
                         </Col>
                     </Col>
 

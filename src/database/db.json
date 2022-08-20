@@ -8,7 +8,7 @@
       "rating": [],
       "colour": "",
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
-      "price": 250000000,
+      "price": 1000000,
       "stock": 13,
       "images": [
         "https://i.pinimg.com/564x/79/98/06/79980650b074c736ccd6d35b7f8680ac.jpg"
@@ -22,7 +22,7 @@
       "rating": [],
       "colour": "",
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
-      "price": 150000000,
+      "price": 1000000,
       "stock": 10,
       "images": [
         "https://i.pinimg.com/564x/97/c5/38/97c53868184b987b26f89b631bc9f25d.jpg",
@@ -37,7 +37,7 @@
       "rating": [],
       "colour": "",
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
-      "price": 170000000,
+      "price": 1000000,
       "stock": 9,
       "images": [
         "https://i.pinimg.com/564x/42/eb/5a/42eb5a9bf7909352ae790064498b4be0.jpg",
@@ -52,7 +52,7 @@
       "rating": [],
       "colour": "",
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
-      "price": 260000000,
+      "price": 2000000,
       "stock": 10,
       "images": [
         "https://i.pinimg.com/564x/a6/f5/e9/a6f5e9aabebdedec1f4e397a5dd20c84.jpg",
@@ -67,7 +67,7 @@
       "rating": [],
       "colour": "",
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
-      "price": 250000000,
+      "price": 2000000,
       "stock": 12,
       "images": [
         "https://i.pinimg.com/564x/97/96/ed/9796edf9dcbd7899bb290ada1ec243a4.jpg",
@@ -82,7 +82,7 @@
       "rating": [],
       "colour": "",
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
-      "price": 190000000,
+      "price": 2000000,
       "stock": 10,
       "images": [
         "https://i.pinimg.com/564x/49/06/24/4906246f5681eba93c8e40ad2857b5a3.jpg",
@@ -97,7 +97,7 @@
       "rating": [],
       "colour": "",
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
-      "price": 90000000,
+      "price": 2000000,
       "stock": 8,
       "images": [
         "https://i.pinimg.com/564x/0d/4a/29/0d4a294f08b9baeed1e6fb4971614e60.jpg",
@@ -112,7 +112,7 @@
       "rating": [],
       "colour": "",
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
-      "price": 50000000,
+      "price": 1500000,
       "stock": 12,
       "images": [
         "https://i.pinimg.com/564x/ac/02/3c/ac023c999ff3492f76e0c0b7c9598106.jpg",
@@ -127,7 +127,7 @@
       "rating": [],
       "colour": "",
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
-      "price": 50000000,
+      "price": 1500000,
       "stock": 12,
       "images": [
         "https://i.pinimg.com/564x/4b/cc/70/4bcc70c245b189486a42b73edd3b6a41.jpg",
@@ -142,7 +142,7 @@
       "rating": [],
       "colour": "",
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
-      "price": 50000000,
+      "price": 500000,
       "stock": 12,
       "images": [
         "https://i.pinimg.com/736x/4f/5a/f6/4f5af60e015dd1f4a4ecfd5c0c689329.jpg",
@@ -157,7 +157,7 @@
       "rating": [],
       "colour": "",
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
-      "price": 50000000,
+      "price": 500000,
       "stock": 12,
       "images": [
         "https://i.pinimg.com/564x/75/4b/53/754b539fc0c977ee37e49f8648051386.jpg",
@@ -172,7 +172,7 @@
       "rating": [],
       "colour": "",
       "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus similique optio delectus dolores corrupti, nostrum dolore harum possimus ipsam accusamus architecto culpa tenetur illum error sed dolorum? Libero, voluptas harum?",
-      "price": 50000000,
+      "price": 500000,
       "stock": 12,
       "images": [
         "https://i.pinimg.com/564x/4e/4b/e5/4e4be5f7932a60d7e5cd871466796e72.jpg",
@@ -218,52 +218,12 @@
       "role": "user",
       "cart": [
         {
-          "id": 7,
-          "name": "ADIDAS NMD R1",
-          "price": 90000000,
-          "qty": 1
-        },
-        {
-          "id": 7,
-          "name": "ADIDAS NMD R1",
-          "price": 90000000,
-          "qty": 1
-        },
-        {
-          "id": 7,
-          "name": "ADIDAS NMD R1",
-          "price": 90000000,
-          "qty": 1
-        },
-        {
           "id": 1,
           "name": "URBAN CASUAL FASHION WHITE RED SNEAKER",
-          "price": 250000000,
-          "qty": 1
-        },
-        {
-          "id": 8,
-          "name": "ADIDAS TRAINER",
-          "price": 50000000,
-          "qty": 1
-        },
-        {
-          "id": 1,
-          "name": "URBAN CASUAL FASHION WHITE RED SNEAKER",
-          "price": 250000000,
-          "qty": 1
-        },
-        {
-          "id": 1,
-          "name": "URBAN CASUAL FASHION WHITE RED SNEAKER",
-          "price": 250000000,
-          "qty": 1
-        },
-        {
-          "id": 10,
-          "name": "VANS BRANCO",
-          "price": 50000000,
-          "qty": 1
+          "price": 1000000,
+          "images": "https://i.pinimg.com/564x/79/98/06/79980650b074c736ccd6d35b7f8680ac.jpg",
+          "maxStock": 13,
+          "qtyBuy": 1
         }
       ]
     }

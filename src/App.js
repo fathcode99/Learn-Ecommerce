@@ -10,7 +10,6 @@ import RegisterPages from './pages/register';
 import DetailPages from './pages/detail'
 import CartPages from './pages/cart'
 
-
 export default function App() {
   const dispatch = useDispatch()
   useEffect(() => {

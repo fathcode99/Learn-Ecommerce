@@ -7,7 +7,7 @@ import { Col } from "react-bootstrap";
 export default function Card(products) {
     return (
         <Col lg={3} sm={12}>
-            <Link as={Link} to={`/detail/${products.data.id}`} className="link-detail">
+            <Link as={Link} to={`/detail/${products.data.id}`} key={products.data.id} className="link-detail">
                 < div className="card-container">
                     {/* {console.log(products.data.images[0])} */}
                     <div className="card-container-img">

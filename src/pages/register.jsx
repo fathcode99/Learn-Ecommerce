@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import {
-    Container,
-    Row,
-    Col,
     Nav,
     Modal
 } from 'react-bootstrap'
@@ -41,11 +38,12 @@ export default function RegisterPage() {
         let password = document.getElementById("reg-password").value
         let confirmPw = document.getElementById("reg-confirmPw").value
         let role = 'user'
+        let cart = []
 
         if (!username || !email || !password || !confirmPw)
             return setSignUp(true)
 
-        Axios.post('http://localhost:2000/user', { username, email, password, role })
+        Axios.post('http://localhost:2000/user', { username, email, password, role, cart })
             .then(res => {
                 console.log(res.data)
                 dispatch({
@@ -157,9 +155,13 @@ export default function RegisterPage() {
                         </div>
 
                         <button className="btn-style" onClick={onSign} >Sign Up</button>
-                        <p className="text-ask py-3">
+                        <p className="text-ask pt-3 m-0">
                             Have an account ?
                             <Nav as={Link} to="/login" className="btn-sign-up"> Login </Nav>
+                        </p>
+                        <p className="text-ask">
+                            Go to
+                            <Nav as={Link} to="/" className="btn-sign-up"> Home </Nav>
                         </p>
                     </div>
 
