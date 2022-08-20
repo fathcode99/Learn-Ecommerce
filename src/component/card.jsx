@@ -17,11 +17,7 @@ export default function Card(products) {
                         <p className="card-title">{products.data.name}</p>
                         <p className="card-price">IDR {products.data.price.toLocaleString()}</p>
                         <p className="card-star">
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
-                            <i class="fa-solid fa-star"></i>
+                            
                         </p>
                     </div>
                 </div>

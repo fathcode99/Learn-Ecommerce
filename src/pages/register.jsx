@@ -113,7 +113,7 @@ export default function RegisterPage() {
         <div className="login-bg">
             <div className="img-login-front">
                 <Modal show={signUp} onHide={handleClose}>
-                    <Modal.Body className="modal-body"><i class="fa-solid fa-triangle-exclamation px-2"></i>Please make sure all data is filled in and valid !</Modal.Body>
+                    <Modal.Body className="modal-body"><i className="fa-solid fa-triangle-exclamation px-2"></i>Please make sure all data is filled in and valid !</Modal.Body>
                 </Modal>
 
                 <div className="login-from-container">
@@ -144,7 +144,7 @@ export default function RegisterPage() {
                             <div className="login-box-form-pw">
                                 <input className="login-input px-0" style={{width:"90%"}} type={pwVisible ? "text" :  "password"} placeholder="Password" id="reg-password" onChange={(e) => passValid(e)} />
                                 <button className="login-input" style={{width:"10%"}} onClick={onPwVisible}>
-                                    <i class="fa-solid fa-eye p-0"></i>
+                                    <i className="fa-solid fa-eye p-0"></i>
                                 </button>
                             </div>
                             {errorPassword ? <b className="p-error">Please include alphabet, symbol, and numeric</b> : ''}

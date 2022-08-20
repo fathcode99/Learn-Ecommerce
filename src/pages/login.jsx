@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import {
-    Container,
-    Row,
-    Col,
     Modal,
     Nav
 } from 'react-bootstrap'
@@ -69,7 +66,7 @@ export default function LoginPages() {
             <div className="img-login-front">
 
                 <Modal show={state.errorLogin} onHide={handleCloseLogin}>
-                    <Modal.Body className="modal-body"><i class="fa-solid fa-triangle-exclamation px-2"></i>This account is doesn't exist. Please Sign Up first !</Modal.Body>
+                    <Modal.Body className="modal-body"><i className="fa-solid fa-triangle-exclamation px-2"></i>This account is doesn't exist. Please Sign Up first !</Modal.Body>
                 </Modal>
 
                 <div className="login-from-container">
@@ -86,7 +83,7 @@ export default function LoginPages() {
                             <div className="login-box-form-pw">
                                 <input className="login-input px-0" style={{width:"90%"}} type={pwVisible ? "text" :  "password"} placeholder="Password" id="password" />
                                 <button className="login-input" style={{width:"10%"}} onClick={onPwVisible}>
-                                    <i class="fa-solid fa-eye p-0"></i>
+                                    <i className="fa-solid fa-eye p-0"></i>
                                 </button>
                             </div>
                             {errorPassword ? <b className="p-error"> Please input your Password !</b> : ''}

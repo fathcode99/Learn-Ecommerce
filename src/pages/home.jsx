@@ -7,7 +7,6 @@ import {
     Col,
     Carousel
 } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
 
 import "./stylePages.css"
 
@@ -52,7 +51,7 @@ export default function HomePage() {
                     <Row className="search-bar-style my-2">
                         <Col lg={3} className="search-bar-icon">
                             <i className="fa-solid fa-filter px-2"></i> Filters
-                            <i class="fa-solid fa-sort-down px-2"></i>
+                            <i className="fa-solid fa-sort-down px-2"></i>
                         </Col>
                         <Col lg={6} className="search-bar-icon">
                             <input className="login-input" style={{ width: "100%" }} placeholder="Search" />
@@ -90,7 +89,7 @@ export default function HomePage() {
                                         <div style={{ width: "65%" }} className="ls-history-product">
                                             <div>NAME PRODUCT</div>
                                             <div>IDR : Rp 1.000.000</div>
-                                            <div style={{ fontSize: "12px" }}><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                                            <div style={{ fontSize: "12px" }}><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i><i className="fa-solid fa-star"></i></div>
                                         </div>
                                     </div>
                                 </Col>
@@ -154,6 +153,7 @@ export default function HomePage() {
                                     </Carousel>
                                 </Col>
                             </Row>
+
                             <Col lg={12} className="rs-title">
                                 BEST PRODUCTS
                             </Col>

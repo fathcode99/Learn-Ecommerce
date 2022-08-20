@@ -3,17 +3,9 @@ const initial_state = {
     username : "",
     password : "",
     role : "",
+    cart : [],
     errorLogin : false,
     successReg : false,
-    // products : {
-    //     id : null,
-    //     name : "",
-    //     category : "",
-    //     brand : "",
-    //     rating : "",
-
-
-    // }
 }
 
 const userReducer = (state = initial_state, action) => {
@@ -24,7 +16,8 @@ const userReducer = (state = initial_state, action) => {
                 id : action.payload.id,
                 username : action.payload.username,
                 password : action.payload.password,
-                role : action.payload.role
+                role : action.payload.role,
+                cart : action.payload.cart
             }
         case 'ERROR_LOGIN' :
             return {

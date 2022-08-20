@@ -182,24 +182,24 @@
   ],
   "slider": [
     {
-      "img" : "https://i.pinimg.com/564x/f2/ab/e5/f2abe5d9d2c659c5fcd0bfb89c010551.jpg",
-      "title" : "BEST PRODUCT THIS MONTH"
+      "img": "https://i.pinimg.com/564x/f2/ab/e5/f2abe5d9d2c659c5fcd0bfb89c010551.jpg",
+      "title": "BEST PRODUCT THIS MONTH"
     },
     {
-      "img" : "https://i.pinimg.com/564x/9c/e3/c5/9ce3c5a1b379ddc2570ae2fe6d489e36.jpg",
-      "title" : "BEST SELLING THIS MONTH"
+      "img": "https://i.pinimg.com/564x/9c/e3/c5/9ce3c5a1b379ddc2570ae2fe6d489e36.jpg",
+      "title": "BEST SELLING THIS MONTH"
     },
     {
-      "img" : "https://i.pinimg.com/736x/f3/d3/bd/f3d3bd4ad90fa46b2c1fe2b26b9e46f0.jpg",
-      "title" : "BEST QUALITY IN THE WORLD"
+      "img": "https://i.pinimg.com/736x/f3/d3/bd/f3d3bd4ad90fa46b2c1fe2b26b9e46f0.jpg",
+      "title": "BEST QUALITY IN THE WORLD"
     },
     {
-      "img" : "https://i.pinimg.com/564x/cd/26/b9/cd26b93d219f1815331d571d345e86cd.jpg",
-      "title" : "BEST DESIGN"
+      "img": "https://i.pinimg.com/564x/cd/26/b9/cd26b93d219f1815331d571d345e86cd.jpg",
+      "title": "BEST DESIGN"
     },
     {
-      "img" : "https://i.pinimg.com/564x/fd/63/9a/fd639a56bff63f8b4f76549a8285c90e.jpg",
-      "title" : "BEST INSPIRATIONAL SHOES"
+      "img": "https://i.pinimg.com/564x/fd/63/9a/fd639a56bff63f8b4f76549a8285c90e.jpg",
+      "title": "BEST INSPIRATIONAL SHOES"
     }
   ],
   "user": [
@@ -212,30 +212,60 @@
     },
     {
       "id": 2,
-      "username": "admin1",
-      "password": "user1234",
+      "username": "user0",
+      "password": "user123",
       "email": "user@gmail.com",
-      "role": "admin"
-    },
-    {
-      "username": "admin00",
-      "email": "admin00@gmail.com",
-      "password": "asd123!@",
-      "id": 3
-    },
-    {
-      "username": "user01",
-      "email": "user01@gmail.com",
-      "password": "user123!@",
       "role": "user",
-      "id": 4
-    },
-    {
-      "username": "aisyah1",
-      "email": "aisyah@gmail.com",
-      "password": "aisyah1!",
-      "role": "user",
-      "id": 5
+      "cart": [
+        {
+          "id": 7,
+          "name": "ADIDAS NMD R1",
+          "price": 90000000,
+          "qty": 1
+        },
+        {
+          "id": 7,
+          "name": "ADIDAS NMD R1",
+          "price": 90000000,
+          "qty": 1
+        },
+        {
+          "id": 7,
+          "name": "ADIDAS NMD R1",
+          "price": 90000000,
+          "qty": 1
+        },
+        {
+          "id": 1,
+          "name": "URBAN CASUAL FASHION WHITE RED SNEAKER",
+          "price": 250000000,
+          "qty": 1
+        },
+        {
+          "id": 8,
+          "name": "ADIDAS TRAINER",
+          "price": 50000000,
+          "qty": 1
+        },
+        {
+          "id": 1,
+          "name": "URBAN CASUAL FASHION WHITE RED SNEAKER",
+          "price": 250000000,
+          "qty": 1
+        },
+        {
+          "id": 1,
+          "name": "URBAN CASUAL FASHION WHITE RED SNEAKER",
+          "price": 250000000,
+          "qty": 1
+        },
+        {
+          "id": 10,
+          "name": "VANS BRANCO",
+          "price": 50000000,
+          "qty": 1
+        }
+      ]
     }
   ],
   "history": []

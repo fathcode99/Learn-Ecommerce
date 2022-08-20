@@ -29,9 +29,9 @@ export default function footer() {
 
                     <Col>
                         <Col className="heading-footer">SOCIAL MEDIA</Col>
-                        <Col><i class="fa-brands fa-square-facebook"></i> Facebook Pages</Col>
-                        <Col><i class="fa-brands fa-square-twitter"></i> Twitter</Col>
-                        <Col><i class="fa-brands fa-square-instagram"></i> Instagram </Col>
+                        <Col><i className="fa-brands fa-square-facebook"></i> Facebook Pages</Col>
+                        <Col><i className="fa-brands fa-square-twitter"></i> Twitter</Col>
+                        <Col><i className="fa-brands fa-square-instagram"></i> Instagram </Col>
                     </Col>
 
                     <Col>

@@ -34,7 +34,7 @@ export default function NavLogin() {
                             </Col>
                             <Col lg={2}>
                                 <Link as={Link} to="/" className="nav-top-text" onClick={onLogOut}>
-                                    <i class="fa-solid fa-arrow-right-from-bracket px-2"></i>Logout
+                                    <i className="fa-solid fa-arrow-right-from-bracket px-2"></i>Logout
                                 </Link>
                             </Col>
 
