@@ -93,7 +93,7 @@ export default function Cart() {
         <div className="bg-detail">
             <NavLogin />
             <NavBar />
-            {/* {console.log(cartList)} */}
+            {console.log(cartList)}
             <Container style={{ paddingBottom: "4rem" }}>
                 <Row className="mt-3 mb-0">
                     <Col lg={12} className="heading-detail px-0">
@@ -104,7 +104,7 @@ export default function Cart() {
                     </Col>
                 </Row>
 
-                {cartList ?
+                {cartList.length !== 0 ?
                     cartList.map((item, index) =>
                         <Row key={item.id}>
                             <div className="cart-box mt-3 py-3">
@@ -160,7 +160,7 @@ export default function Cart() {
                             </Link>
                         </div>
                         <div className="cart-bottom-price">
-                            Total Price : IDR {cartList ? TotalPrice() : []}
+                            Total Price : IDR {cartList.length !== 0 ? TotalPrice().toLocaleString() : '' }
                             <Link as={Link} to="/">
                                 <button className="btn-style-3 ps-5"><i className="fa-solid fa-cart-shopping px-2"></i></button>
                             </Link>
