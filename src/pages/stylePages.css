@@ -397,12 +397,23 @@
 .cart-counter {
     width: 10vw;
     color: white;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    
 }
+
 .cart-price {
     width: 15vw;
     color: white;
+    display: flex;
+    justify-content: center;
+    
 }
 .cart-close {
     width: 5vw;
     color: white;
+    display: flex;
+    justify-content: center;
+    
 }

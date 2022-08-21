@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Axios from 'axios'
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 import {
     Container, Col, Row
@@ -14,10 +14,11 @@ import "./stylePages.css"
 
 export default function Detail() {
     const state = useSelector((state) => state.userReducer)
+    const dispatch = useDispatch()
 
     const [products, setProducts] = useState({})
 
-    const [qty, setQty] = useState(0)
+    const [qty, setQty] = useState(1)
     const [toLogin, setToLogin] = useState(false)
 
     let { id } = useParams();
@@ -42,11 +43,14 @@ export default function Detail() {
         let n = +e.target.value
         let maxQty = +products.stock
         if (n < +1) {
-            setQty(0)
+            setQty('')
+            if(qty==='') {
+                setQty(1)
+            }
         } else if (n > maxQty) {
             setQty(maxQty)
-        } else {
-            setQty(n)
+        } else if (n === ''){
+            setQty(1)
         }
     }
 
@@ -61,11 +65,15 @@ export default function Detail() {
             price: products.price,
             images: products.images[0],
             maxStock: products.stock,
-            qtyBuy: qty
+            qtyBuy: qty,
         }
         tempCart.push(dataProducts)
         await Axios.patch(`http://localhost:2000/user/${state.id}`, { cart: tempCart })
             .then(res => {
+                dispatch({
+                    type: 'LOGIN',
+                    payload: res.data
+                })
                 Axios.get(`http://localhost:2000/products/${id}`)
                     .then(res => {
                         setProducts(res.data)

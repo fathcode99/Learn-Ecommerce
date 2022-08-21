@@ -223,7 +223,15 @@
           "price": 1000000,
           "images": "https://i.pinimg.com/564x/79/98/06/79980650b074c736ccd6d35b7f8680ac.jpg",
           "maxStock": 13,
-          "qtyBuy": 1
+          "qtyBuy": 13
+        },
+        {
+          "id": 6,
+          "name": "NIKE NIKLAUS",
+          "price": 2000000,
+          "images": "https://i.pinimg.com/564x/49/06/24/4906246f5681eba93c8e40ad2857b5a3.jpg",
+          "maxStock": 10,
+          "qtyBuy": 5
         }
       ]
     }
