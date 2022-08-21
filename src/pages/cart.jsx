@@ -26,7 +26,6 @@ export default function Cart() {
         Axios.get(`http://localhost:2000/user/${state.id}`)
             .then(res => {
                 setCartList(res.data.cart)
-
             })
     }, [state.id])
 
@@ -80,33 +79,44 @@ export default function Cart() {
         setIndexEdit(null)
     }
 
+    const TotalPrice = () => {
+        let total = null
+        for (let i = 0; i < cartList.length; i++) {
+            total += +cartList[i].qtyBuy * +cartList[i].price
+        }
+        return (total)
+    }
 
     return (
+        <>
+        {cartList ? 
         <div className="bg-detail">
             <NavLogin />
             <NavBar />
-            {console.log(cartList)}
+            {/* {console.log(cartList)} */}
             <Container style={{ paddingBottom: "4rem" }}>
                 <Row className="mt-3 mb-0">
                     <Col lg={12} className="heading-detail px-0">
                         <label>Your Shopping Cart</label>
                         <Link as={Link} to="/">
-                            <button className="btn-style-2"><i className="fa-solid fa-cart-shopping px-2"></i>Continue Shopping</button>
+                            <button className="btn-style-2"><i className="fa-solid fa-cart-shopping px-2"></i>Checkout</button>
                         </Link>
                     </Col>
                 </Row>
+
                 {cartList ?
                     cartList.map((item, index) =>
                         <Row key={item.id}>
                             <div className="cart-box mt-3 py-3">
-                                <div className="m-0">
-                                    <img className="cart-box-img me-2" src={item.images} alt="product" />
+                                <div className="cart-box-img m-0">
+                                    <img className="cart-img me-2" src={item.images} alt="product" />
                                 </div>
                                 <div className="cart-title me-2">
-                                    <div>{item.name}</div>
-                                    <div>{item.brand}</div>
+                                    <div className="cart-title-brand">{item.brand}</div>
+                                    <div className="cart-title-name">{item.name}</div>
                                     <div>Ready stock : {item.maxStock}</div>
                                 </div>
+                                <div className="cart-price-pcs me-2">IDR {item.price.toLocaleString()} / pcs</div>
 
                                 <div className="cart-counter me-2">
                                     {indexEdit === index ?
@@ -115,26 +125,25 @@ export default function Cart() {
                                             <input className="qty-input" type="text" value={qty} onChange={(e) => onQty(e, item.maxStock)} />
                                             <button className="btn-qty" onClick={onPlus} disabled={qty === item.maxStock ? true : false}>+</button>
 
-                                            <button className="btn-style-2" onClick={() => setIndexEdit(null)}>
-                                                <i class="fa-solid fa-square-check"></i>
+                                            <button className="btn-style-2 px-1" onClick={() => setIndexEdit(null)}>
+                                                <i className="fa-solid fa-rectangle-xmark "></i>
                                             </button>
-                                            <button className="btn-style-2" onClick={() => onSave(index)}>
-                                                <i class="fa-solid fa-floppy-disk"></i>
+                                            <button className="btn-style-2 p-0" onClick={() => onSave(index)}>
+                                                <i className="fa-solid fa-square-check "></i>
                                             </button>
                                         </>
                                         :
                                         <>
                                             <p className="m-0">{item.qtyBuy}</p>
-                                            <button className="btn-style-2" onClick={() => onEdit(index)}><i class="fa-solid fa-pen-to-square"></i></button>
+                                            <button className="btn-style-2" onClick={() => onEdit(index)}><i className="fa-solid fa-pen-to-square"></i></button>
                                         </>
                                     }
                                 </div>
 
-
                                 <div className="cart-price me-2">IDR {(item.qtyBuy * item.price).toLocaleString()}</div>
                                 <div className="cart-close" >
                                     <button className="btn-style-2" onClick={() => onDelete(index)}>
-                                        <i class="fa-solid fa-trash-can"></i>
+                                        <i className="fa-solid fa-trash-can"></i>
                                     </button>
                                 </div>
                             </div>
@@ -143,8 +152,25 @@ export default function Cart() {
                     :
                     []
                 }
+                <Row>
+                    <div className="cart-box-bottom py-4 mt-3">
+                        <div>
+                            <Link as={Link} to="/">
+                                <button className="btn-style-3 "><i class="fa-solid fa-arrow-left-long pe-2"></i>Back to Shop</button>
+                            </Link>
+                        </div>
+                        <div className="cart-bottom-price">
+                            Total Price : IDR {cartList ? TotalPrice() : []}
+                            <Link as={Link} to="/">
+                                <button className="btn-style-3 ps-5"><i className="fa-solid fa-cart-shopping px-2"></i></button>
+                            </Link>
+                        </div>
+                    </div>
+                </Row>
             </Container>
             <Footer />
         </div>
+        : []}
+        </>
     )
 }

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Axios from 'axios'
 import { Link, Navigate, useParams } from 'react-router-dom'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 import {
     Container, Col, Row
@@ -14,7 +14,6 @@ import "./stylePages.css"
 
 export default function Detail() {
     const state = useSelector((state) => state.userReducer)
-    const dispatch = useDispatch()
 
     const [products, setProducts] = useState({})
 
@@ -44,17 +43,17 @@ export default function Detail() {
         let maxQty = +products.stock
         if (n < +1) {
             setQty('')
-            if(qty==='') {
+            if (qty === '') {
                 setQty(1)
             }
         } else if (n > maxQty) {
             setQty(maxQty)
-        } else if (n === ''){
+        } else if (n === '') {
             setQty(1)
         }
     }
 
-    const onCeckout = async () => {
+    const onAddToCart = () => {
         if (!state.username)
             return setToLogin(true)
 
@@ -62,18 +61,37 @@ export default function Detail() {
         let dataProducts = {
             id: products.id,
             name: products.name,
+            brand : products.brand,
             price: products.price,
             images: products.images[0],
             maxStock: products.stock,
             qtyBuy: qty,
         }
+
+        // console.log(state.cart)
+        // untuk menambahkan update data jika produk sudak tersedia
+        for (let i = 0; i < state.cart.length; i++) {
+            if (state.cart[i].id === products.id) {
+                let tempCart = state.cart
+                let tempProd = state.cart[i]
+                tempProd.qtyBuy += qty
+                return (
+                    tempCart.splice(i, 1, tempProd),
+                    Axios.patch(`http://localhost:2000/user/${state.id}`, { cart: tempCart })
+                        .then(res => {
+                            Axios.get(`http://localhost:2000/products/${id}`)
+                                .then(res => {
+                                    setProducts(res.data)
+                                })
+                        })
+                )
+            }
+        }
+
         tempCart.push(dataProducts)
-        await Axios.patch(`http://localhost:2000/user/${state.id}`, { cart: tempCart })
+
+        Axios.patch(`http://localhost:2000/user/${state.id}`, { cart: tempCart })
             .then(res => {
-                dispatch({
-                    type: 'LOGIN',
-                    payload: res.data
-                })
                 Axios.get(`http://localhost:2000/products/${id}`)
                     .then(res => {
                         setProducts(res.data)
@@ -122,7 +140,7 @@ export default function Detail() {
                             <button className="btn-qty" onClick={onPlus} disabled={qty === products.stock ? true : false}>+</button>
                         </Col>
                         <Col>
-                            <button className="btn-style me-2 mt-3" onClick={onCeckout} >
+                            <button className="btn-style me-2 mt-3" onClick={onAddToCart} >
                                 <i className="fa-solid fa-cart-shopping px-2"></i>Add to Cart <badge className="badge-cart px-1 mx-1">{state.cart.length}</badge>
                             </button>
                             <button className="btn-style"><i className="fa-solid fa-comment-dollar px-2"></i>Chat Seller </button>
