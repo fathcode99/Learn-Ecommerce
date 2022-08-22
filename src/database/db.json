@@ -216,17 +216,7 @@
       "password": "user123",
       "email": "user@gmail.com",
       "role": "user",
-      "cart": [
-        {
-          "id": 6,
-          "name": "NIKE NIKLAUS",
-          "brand": "NIKE",
-          "price": 2000000,
-          "images": "https://i.pinimg.com/564x/49/06/24/4906246f5681eba93c8e40ad2857b5a3.jpg",
-          "maxStock": 10,
-          "qtyBuy": 3
-        }
-      ]
+      "cart": []
     },
     {
       "username": "Cobalagi",

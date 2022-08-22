@@ -1,3 +1,5 @@
-let cartList = 
+let cartList = []
 
-console.log(Boolean(cartList))
+cartList.map(item => 
+    console.log(Boolean(item))
+)

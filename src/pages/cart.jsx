@@ -6,8 +6,6 @@ import {
     Container, Row, Col
 } from 'react-bootstrap'
 
-import Footer from '../component/footer'
-
 import NavBar from '../component/navbar'
 import NavLogin from '../component/navlogin'
 
@@ -17,7 +15,7 @@ export default function Cart() {
     // note : cart di redux itu kosong
     // note : kalau mau edit cart bisa lewat cartList di bawah
 
-    const [cartList, setCartList] = useState()
+    const [cartList, setCartList] = useState([])
     const [indexEdit, setIndexEdit] = useState(null)
 
     const [qty, setQty] = useState(null)
@@ -88,8 +86,6 @@ export default function Cart() {
     }
 
     return (
-        <>
-        {cartList ? 
         <div className="bg-detail">
             <NavLogin />
             <NavBar />
@@ -168,9 +164,7 @@ export default function Cart() {
                     </div>
                 </Row>
             </Container>
-            <Footer />
+            
         </div>
-        : []}
-        </>
     )
 }
