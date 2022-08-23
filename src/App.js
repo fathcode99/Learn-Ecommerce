@@ -9,6 +9,7 @@ import LoginPages from './pages/login';
 import RegisterPages from './pages/register';
 import DetailPages from './pages/detail'
 import CartPages from './pages/cart'
+import HistoryPages from './pages/history'
 
 export default function App() {
   const dispatch = useDispatch()
@@ -31,6 +32,7 @@ export default function App() {
         <Route path="/register" element={<RegisterPages />} />
         <Route path="/detail/:id" element={<DetailPages />} />
         <Route path="/cart" element={<CartPages />}/>
+        <Route path="/history" element={<HistoryPages />}/>
       </Routes>
     </div>
   );

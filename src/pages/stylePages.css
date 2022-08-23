@@ -259,6 +259,17 @@
     border: 1px solid red;
     color: red;
 }
+.modal-body-ceck {
+    background-color: rgba(21, 10, 48, 1);
+    backdrop-filter: blur(6px);
+    border: 1px solid #00dbff;
+    color: #00dbff;
+}
+.modal-box-input {
+    display: flex;
+    width: 100%;
+}
+
 
 
 
@@ -456,4 +467,27 @@
     font-size: large;
     font-weight: 600;
     color: black;
+}
+
+.empty-cart {
+    height: 50vh;
+    color: #00dbff;
+    font-weight: 500;
+    font-size: medium;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
+}
+
+/* HISTORY */
+.accordion-box {
+    background-color: transparent;
+}
+
+.accordion-body  {
+    background-color: #04000e;
+    border: 1px solid #00dbff;
+    color: white;
 }

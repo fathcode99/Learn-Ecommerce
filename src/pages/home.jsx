@@ -60,7 +60,9 @@ export default function HomePage() {
                         </Col>
                         <Col lg={1}></Col>
                         <Col lg={2} className="search-bar-icon">
-                            <button className="btn-style-3"><i className="fa-solid fa-heart-circle-plus px-2"></i></button>
+                            <Link as={Link} to="/history">
+                                <button className="btn-style-3"><i className="fa-solid fa-heart-circle-plus px-2"></i></button>
+                            </Link>
                             <Link as={Link} to="/cart">
                                 <button className="btn-style-3"><i className="fa-solid fa-cart-shopping px-2"></i></button>
                             </Link>
