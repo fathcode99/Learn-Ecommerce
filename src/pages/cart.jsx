@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { Link, Navigate } from 'react-router-dom'
 import Axios from "axios";
 import {
@@ -11,7 +11,7 @@ import NavLogin from '../component/navlogin'
 
 export default function Cart() {
     const state = useSelector((state) => state.userReducer)
-
+    const dispatch = useDispatch()
     // note : cart di redux itu kosong
     // note : kalau mau edit cart bisa lewat cartList di bawah
 
@@ -119,13 +119,30 @@ export default function Cart() {
         } else if (state.password === validate) {
             return (
                 setToHistory(true),
-                Axios.patch(`http://localhost:2000/user/${state.id}`, { cart: [] })
+                Axios.post(`http://localhost:2000/history`, dataHistory)
                     .then(res => {
-                        setCartList([])
-                        Axios.post(`http://localhost:2000/history`, dataHistory)
+                        let idUser = localStorage.getItem('idUser')
+                        Axios.get(`http://localhost:2000/history?idUser=${idUser}`)
                             .then(res => {
-                                console.log(res.data)
+                                dispatch({
+                                    type: 'HISTORY_UPDATE',
+                                    payload: res.data
+                                })
                             })
+                    })
+                    .then(res => {
+                        Axios.patch(`http://localhost:2000/user/${state.id}`, { cart: [] })
+                            .then(res => {
+                                Axios.get(`http://localhost:2000/user/${state.id}`)
+                                    .then(res => {
+                                        dispatch({
+                                            type: 'LOGIN',
+                                            payload: res.data
+                                        })
+                                    })
+                                setCartList([])
+                            })
+
                     })
             )
         }

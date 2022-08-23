@@ -109,8 +109,8 @@ export default function HomePage() {
                         <Col lg={9} className="pe-0">
                             <Col lg={12}>
                                 <Carousel>
-                                    {carouselImg.map(item =>
-                                        <Carousel.Item>
+                                    {carouselImg.map((item, index) =>
+                                        <Carousel.Item key={index}>
                                             <img
                                                 className="d-block w-100 carousel-img"
                                                 src={item.img}
@@ -129,8 +129,8 @@ export default function HomePage() {
                             <Row className="mt-3">
                                 <Col lg={6}>
                                     <Carousel>
-                                        {carouselImg.map(item =>
-                                            <Carousel.Item>
+                                        {carouselImg.map((item, index) =>
+                                            <Carousel.Item key={index}>
                                                 <img
                                                     className="d-block w-100 carousel-img"
                                                     src={item.img}
@@ -145,8 +145,8 @@ export default function HomePage() {
 
                                 <Col lg={6}>
                                     <Carousel>
-                                        {carouselImg.map(item =>
-                                            <Carousel.Item>
+                                        {carouselImg.map((item, index) =>
+                                            <Carousel.Item key={index}>
                                                 <img
                                                     className="d-block w-100 carousel-img"
                                                     src={item.img}

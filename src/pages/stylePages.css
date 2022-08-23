@@ -484,10 +484,17 @@
 /* HISTORY */
 .accordion-box {
     background-color: transparent;
+    display: flex;
+    
 }
 
 .accordion-body  {
     background-color: #04000e;
     border: 1px solid #00dbff;
     color: white;
+}
+
+.history-del {
+    display: flex;
+    justify-content: right;
 }
