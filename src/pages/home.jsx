@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Axios from 'axios'
-import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import {
     Container,
@@ -18,22 +18,40 @@ import CardProduct from '../component/card'
 import Footer from '../component/footer'
 
 export default function HomePage() {
+    const state = useSelector((state) => state.userReducer)
+
     const [carouselImg, setCarouselImg] = useState([])
     const [products, setProducts] = useState([])
-    const dispatch = useDispatch()
+    
+    // pagination
+    const [page, setPage] = useState(1)
+    const [maxPage, setMaxPage] = useState(0)
+    
+    let prodPerPage = 4
+    let startCard = (page - 1) * prodPerPage
+    let sliceCard = products.slice(startCard, startCard + prodPerPage)
 
     useEffect(() => {
         Axios.get('http://localhost:2000/products')
             .then(res => {
                 setProducts(res.data)
+                setMaxPage(Math.ceil(res.data.length / prodPerPage))
                 // console.log({products : res.data})
             })
         Axios.get('http://localhost:2000/slider')
             .then(res => {
                 setCarouselImg(res.data)
             })
-    }, [dispatch])
+    }, [prodPerPage])
 
+    
+
+    const onNext = () => {
+        setPage(page + 1)
+    }
+    const onPrev = () => {
+        setPage(page - 1)
+    }
 
     return (
         <div>
@@ -60,12 +78,20 @@ export default function HomePage() {
                         </Col>
                         <Col lg={1}></Col>
                         <Col lg={2} className="search-bar-icon">
-                            <Link as={Link} to="/history">
-                                <button className="btn-style-3"><i className="fa-solid fa-heart-circle-plus px-2"></i></button>
-                            </Link>
-                            <Link as={Link} to="/cart">
-                                <button className="btn-style-3"><i className="fa-solid fa-cart-shopping px-2"></i></button>
-                            </Link>
+                            {state.role === "admin" ?
+                                <Link as={Link} to="/historyadmin">
+                                    <button className="btn-style-3"><i className="fa-solid fa-heart-circle-plus px-2"></i></button>
+                                </Link>
+                                :
+                                <>
+                                    <Link as={Link} to="/history">
+                                        <button className="btn-style-3"><i className="fa-solid fa-heart-circle-plus px-2"></i></button>
+                                    </Link>
+                                    <Link as={Link} to="/cart">
+                                        <button className="btn-style-3"><i className="fa-solid fa-cart-shopping px-2"></i></button>
+                                    </Link>
+                                </>
+                            }
                         </Col>
                     </Row>
 
@@ -164,15 +190,20 @@ export default function HomePage() {
                                 BEST PRODUCTS
                             </Col>
 
-                            <Col lg={12} className="p-0">
-                                <Col lg={12} className="container-card ">
-                                    {products.map((item) =>
+                            <Col lg={12} className="p-0 m-0">
+                                <Col lg={12} className="container-card m-0">
+                                    {sliceCard.map((item) =>
                                         <CardProduct
                                             data={item}
                                             key={item.id}
                                         />
                                     )}
                                 </Col>
+                                <div className="pagination-product my-4">
+                                    <button className="btn-style mx-3" onClick={onPrev} disabled={page === 1 ? true : false}>Prev</button>
+                                    <label>Page {page}/{maxPage} </label>
+                                    <button className="btn-style mx-3" onClick={onNext} disabled={page === maxPage ? true : false}>Next</button>
+                                </div>
                             </Col>
                         </Col>
                     </Row>

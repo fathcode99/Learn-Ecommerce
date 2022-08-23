@@ -498,3 +498,20 @@
     display: flex;
     justify-content: right;
 }
+
+.not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.pagination-product {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+    color: #00dbff;
+    font-weight: 700;
+}

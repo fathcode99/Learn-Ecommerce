@@ -208,7 +208,8 @@
       "username": "admin0",
       "password": "admin123",
       "email": "admin@gmail.com",
-      "role": "admin"
+      "role": "admin",
+      "cart": []
     },
     {
       "id": 2,
@@ -227,5 +228,84 @@
       "id": 3
     }
   ],
-  "history": []
+  "history": [
+    {
+      "idUser": 2,
+      "username": "user0",
+      "time": "8/23/2022",
+      "products": [
+        {
+          "id": 1,
+          "name": "URBAN CASUAL FASHION WHITE RED SNEAKER",
+          "brand": "SNEAKER",
+          "price": 1000000,
+          "images": "https://i.pinimg.com/564x/79/98/06/79980650b074c736ccd6d35b7f8680ac.jpg",
+          "maxStock": 13,
+          "qtyBuy": 1
+        },
+        {
+          "id": 2,
+          "name": "URBAN CASUAL FASHION WHITE BLUE SNEAKER",
+          "brand": "SNEAKER",
+          "price": 1000000,
+          "images": "https://i.pinimg.com/564x/97/c5/38/97c53868184b987b26f89b631bc9f25d.jpg",
+          "maxStock": 10,
+          "qtyBuy": 1
+        }
+      ],
+      "id": 1
+    },
+    {
+      "idUser": 2,
+      "username": "user0",
+      "time": "8/23/2022",
+      "products": [
+        {
+          "id": 3,
+          "name": "URBAN CASUAL FASHION WHITE BLACK SNEAKER",
+          "brand": "SNEAKER",
+          "price": 1000000,
+          "images": "https://i.pinimg.com/564x/42/eb/5a/42eb5a9bf7909352ae790064498b4be0.jpg",
+          "maxStock": 9,
+          "qtyBuy": 1
+        },
+        {
+          "id": 4,
+          "name": "NIKE SNKRS",
+          "brand": "NIKE",
+          "price": 2000000,
+          "images": "https://i.pinimg.com/564x/a6/f5/e9/a6f5e9aabebdedec1f4e397a5dd20c84.jpg",
+          "maxStock": 10,
+          "qtyBuy": 1
+        }
+      ],
+      "id": 2
+    },
+    {
+      "idUser": 2,
+      "username": "user0",
+      "time": "8/23/2022",
+      "products": [
+        {
+          "id": 6,
+          "name": "NIKE NIKLAUS",
+          "brand": "NIKE",
+          "price": 2000000,
+          "images": "https://i.pinimg.com/564x/49/06/24/4906246f5681eba93c8e40ad2857b5a3.jpg",
+          "maxStock": 10,
+          "qtyBuy": 1
+        },
+        {
+          "id": 11,
+          "name": "VANS OLD SCHOOL",
+          "brand": "VANS",
+          "price": 500000,
+          "images": "https://i.pinimg.com/564x/75/4b/53/754b539fc0c977ee37e49f8648051386.jpg",
+          "maxStock": 12,
+          "qtyBuy": 1
+        }
+      ],
+      "id": 3
+    }
+  ]
 }

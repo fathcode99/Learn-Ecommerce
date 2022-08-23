@@ -1,46 +1,34 @@
-import React, { useEffect } from "react";
-import { useSelector, useDispatch } from 'react-redux'
+import React, {useEffect, useState} from "react";
 import Axios from 'axios'
 
-import NavBar from '../component/navbar'
 import NavLogin from '../component/navlogin'
-
-import { Link } from 'react-router-dom'
+import NavBar from '../component/navbar'
 
 import {
     Container, Row, Col, Accordion
 } from 'react-bootstrap'
 
+import { Link } from 'react-router-dom'
 
-export default function History() {
-    const state = useSelector((state) => state.historyReducer)
-    const dispatch = useDispatch()
+export default function HistoryAdmin() {
+    const [historyAdmin, setHistoryAdmin ] = useState([])
 
     useEffect(() => {
-        let idUser = localStorage.getItem('idUser')
-        Axios.get(`http://localhost:2000/history?idUser=${idUser}`)
+        Axios.get(`http://localhost:2000/history`)
             .then(res => {
-                dispatch({
-                    type: 'HISTORY_UPDATE',
-                    payload: res.data
-                })
+                setHistoryAdmin(res.data)
             })
-    }, [state.history, dispatch])
-
+    }, [])
     const onDelHistory = (index) => {
         Axios.delete(`http://localhost:2000/history/${index + 1}`)
             .then(res => {
-                let idUser = localStorage.getItem('idUser')
-                Axios.get(`http://localhost:2000/history?idUser=${idUser}`)
+                Axios.get(`http://localhost:2000/history`)
                     .then(res => {
-                        dispatch({
-                            type: 'HISTORY_UPDATE',
-                            payload: res.data
-                        })
+                        setHistoryAdmin(res.data)
                     })
             })
     }
-
+    
     return (
         <div className="bg-detail">
             <NavLogin />
@@ -48,7 +36,7 @@ export default function History() {
             <Container>
                 <Row className="mt-3 mb-0">
                     <Col lg={12} className="heading-detail px-0">
-                        <label>Your History Shop</label>
+                        <label>All History User</label>
                         <div>
                             <Link as={Link} to="/">
                                 <button className="btn-style mt-4 me-3">Back to Shop</button>
@@ -57,8 +45,8 @@ export default function History() {
                         </div>
                     </Col>
                 </Row>
-                {state.history !== 0 ?
-                    state.history.reverse().map((item, index) => {
+                {historyAdmin !== 0 ?
+                    historyAdmin.reverse().map((item, index) => {
                         return (
                             <Row className="accordion-box mt-3" key={index}>
                                 <Accordion >

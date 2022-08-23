@@ -141,7 +141,8 @@ export default function Detail() {
                         </Col>
                         <Col>
                             <button className="btn-style me-2 mt-3" onClick={onAddToCart} >
-                                <i className="fa-solid fa-cart-shopping px-2"></i>Add to Cart <badge className="badge-cart px-1 mx-1">{state.cart.length}</badge>
+                                <i className="fa-solid fa-cart-shopping px-2"></i>Add to Cart 
+                                <span className="badge-cart px-1 mx-1">{state.cart.length}</span>
                             </button>
                             <button className="btn-style"><i className="fa-solid fa-comment-dollar px-2"></i>Chat Seller </button>
                         </Col>
