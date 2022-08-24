@@ -28,7 +28,7 @@ export default function NavLogin() {
                     {state.username ?
                         <>
                             
-                            <Col className="col-lg-2 offset-lg-6 col-sm-3 offset-sm-2">
+                            <Col className="col-lg-2 offset-lg-6 col-sm-4 offset-sm-1">
                                 <Link as={Link} to="/login" className="nav-top-text">
                                     <i className="fa-solid fa-user px-2" ></i>Hello, {state.username}
                                 </Link>
@@ -43,7 +43,7 @@ export default function NavLogin() {
                         :
                         <>
                             
-                            <Col className="col-lg-1 offset-lg-7 col-sm-2 offset-sm-3">
+                            <Col className="col-lg-2 offset-lg-6 col-sm-2 offset-sm-3">
                                 <Link as={Link} to="/login" className="nav-top-text">
                                     <i className="fa-solid fa-user px-2" ></i>Login
                                 </Link>

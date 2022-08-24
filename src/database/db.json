@@ -226,6 +226,14 @@
       "role": "user",
       "cart": [],
       "id": 3
+    },
+    {
+      "username": "responsive",
+      "email": "responsive@gmail.com",
+      "password": "1234567!",
+      "role": "user",
+      "cart": [],
+      "id": 4
     }
   ],
   "history": [
@@ -245,6 +253,32 @@
         }
       ],
       "id": 1
+    },
+    {
+      "idUser": 4,
+      "username": "responsive",
+      "time": "8/24/2022",
+      "products": [
+        {
+          "id": 2,
+          "name": "URBAN CASUAL FASHION WHITE BLUE SNEAKER",
+          "brand": "SNEAKER",
+          "price": 1000000,
+          "images": "https://i.pinimg.com/564x/97/c5/38/97c53868184b987b26f89b631bc9f25d.jpg",
+          "maxStock": 10,
+          "qtyBuy": 3
+        },
+        {
+          "id": 4,
+          "name": "NIKE SNKRS",
+          "brand": "NIKE",
+          "price": 2000000,
+          "images": "https://i.pinimg.com/564x/a6/f5/e9/a6f5e9aabebdedec1f4e397a5dd20c84.jpg",
+          "maxStock": 10,
+          "qtyBuy": 3
+        }
+      ],
+      "id": 3
     }
   ]
 }

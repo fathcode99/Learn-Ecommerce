@@ -98,7 +98,7 @@ export default function HomePage() {
 
                     <Row >
                         {/* LEFT SIDE */}
-                        <Col lg={{ span: 3, order: 0 }} sm={12} className="p-2">
+                        <Col lg={{ span: 3, order: 0 }} sm={{ span: 12, order: 1 }} className="p-2">
                             <Row >
                                 <Col lg={12} sm={6} className="ls-category my-2">
                                     <Col className="ls-category-text">CATEGORY</Col>
@@ -114,7 +114,7 @@ export default function HomePage() {
                                 </Col>
                             </Row>
 
-                            <Col lg={12} sm={{ span: 12, order: 1 }} className="ls-category mt-3 p-0 pe-3">
+                            <Col lg={12} sm={12} className="ls-category mt-3 p-0 pe-3">
                                 <Col className="ls-category-text">LATEST PRODUCT</Col>
                                 <Col>
                                     <div className="ls-history p-2">
