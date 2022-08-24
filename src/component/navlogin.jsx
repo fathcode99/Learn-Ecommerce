@@ -41,8 +41,8 @@ export default function NavLogin() {
                         </>
                         :
                         <>
-                            <Col lg={7}></Col>
-                            <Col lg={1}>
+                            <Col lg={6}></Col>
+                            <Col lg={2}>
                                 <Link as={Link} to="/login" className="nav-top-text">
                                     <i className="fa-solid fa-user px-2" ></i>Login
                                 </Link>

@@ -227,5 +227,40 @@
       "id": 3
     }
   ],
-  "history": []
+  "history": [
+    {
+      "idUser": 2,
+      "username": "user0",
+      "time": "8/24/2022",
+      "products": [
+        {
+          "id": 1,
+          "name": "URBAN CASUAL FASHION WHITE RED SNEAKER",
+          "brand": "SNEAKER",
+          "price": 1000000,
+          "images": "https://i.pinimg.com/564x/79/98/06/79980650b074c736ccd6d35b7f8680ac.jpg",
+          "maxStock": 13,
+          "qtyBuy": 4
+        }
+      ],
+      "id": 1
+    },
+    {
+      "idUser": 2,
+      "username": "user0",
+      "time": "8/24/2022",
+      "products": [
+        {
+          "id": 1,
+          "name": "URBAN CASUAL FASHION WHITE RED SNEAKER",
+          "brand": "SNEAKER",
+          "price": 1000000,
+          "images": "https://i.pinimg.com/564x/79/98/06/79980650b074c736ccd6d35b7f8680ac.jpg",
+          "maxStock": 13,
+          "qtyBuy": 1
+        }
+      ],
+      "id": 2
+    }
+  ]
 }
