@@ -22,11 +22,11 @@ export default function HomePage() {
 
     const [carouselImg, setCarouselImg] = useState([])
     const [products, setProducts] = useState([])
-    
+
     // pagination
     const [page, setPage] = useState(1)
     const [maxPage, setMaxPage] = useState(0)
-    
+
     let prodPerPage = 4
     let startCard = (page - 1) * prodPerPage
     let sliceCard = products.slice(startCard, startCard + prodPerPage)
@@ -44,7 +44,7 @@ export default function HomePage() {
             })
     }, [prodPerPage])
 
-    
+
 
     const onNext = () => {
         setPage(page + 1)
@@ -67,51 +67,54 @@ export default function HomePage() {
             <div className="bg-gradient-all">
 
                 <Container>
-                    <Row className="search-bar-style my-2">
-                        <Col lg={3} className="search-bar-icon">
-                            <i className="fa-solid fa-filter px-2"></i> Filters
-                            <i className="fa-solid fa-sort-down px-2"></i>
-                        </Col>
-                        <Col lg={6} className="search-bar-icon">
-                            <input className="login-input" style={{ width: "100%" }} placeholder="Search" />
-                            <button className="btn-style-3"><i className="fa-solid fa-magnifying-glass"></i></button>
-                        </Col>
-                        <Col lg={1}></Col>
-                        <Col lg={2} className="search-bar-icon">
-                            {state.role === "admin" ?
-                                <Link as={Link} to="/historyadmin">
-                                    <button className="btn-style-3"><i className="fa-solid fa-heart-circle-plus px-2"></i></button>
-                                </Link>
-                                :
-                                <>
-                                    <Link as={Link} to="/history">
+                    <Row className="my-2 px-2">
+                        <Col className="search-bar-style">
+                            <Col lg={3} sm={3} className="search-bar-icon">
+                                <i className="fa-solid fa-filter px-2"></i> Filters
+                                <i className="fa-solid fa-sort-down px-2"></i>
+                            </Col>
+                            <Col lg={6} sm={6} className="search-bar-icon">
+                                <input className="login-input" style={{ width: "100%" }} placeholder="Search" />
+                                <button className="btn-style-3"><i className="fa-solid fa-magnifying-glass"></i></button>
+                            </Col>
+                            <Col lg={{ span: 2, offset: 1 }} sm={3} className="search-bar-icon">
+                                {state.role === "admin" ?
+                                    <Link as={Link} to="/historyadmin">
                                         <button className="btn-style-3"><i className="fa-solid fa-heart-circle-plus px-2"></i></button>
                                     </Link>
-                                    <Link as={Link} to="/cart">
-                                        <button className="btn-style-3"><i className="fa-solid fa-cart-shopping px-2"></i></button>
-                                    </Link>
-                                </>
-                            }
+                                    :
+                                    <>
+                                        <Link as={Link} to="/history">
+                                            <button className="btn-style-3"><i className="fa-solid fa-heart-circle-plus px-2"></i></button>
+                                        </Link>
+                                        <Link as={Link} to="/cart">
+                                            <button className="btn-style-3"><i className="fa-solid fa-cart-shopping px-2"></i></button>
+                                        </Link>
+                                    </>
+                                }
+                            </Col>
                         </Col>
                     </Row>
 
-                    <Row>
+                    <Row >
                         {/* LEFT SIDE */}
-                        <Col lg={3} className="p-0">
-                            <Col lg={12} className="ls-category">
-                                <Col className="ls-category-text">CATEGORY</Col>
-                                <Col className="ls-category-text">Shoes</Col>
-                                <Col className="ls-category-text">Watches</Col>
-                                <Col className="ls-category-text">Cloth</Col>
-                                <Col className="ls-category-text">Hat</Col>
-                                <Col className="ls-category-text">Glasses</Col>
-                            </Col>
+                        <Col lg={{ span: 3, order: 0 }} sm={12} className="p-2">
+                            <Row >
+                                <Col lg={12} sm={6} className="ls-category my-2">
+                                    <Col className="ls-category-text">CATEGORY</Col>
+                                    <Col className="ls-category-text">Shoes</Col>
+                                    <Col className="ls-category-text">Watches</Col>
+                                    <Col className="ls-category-text">Cloth</Col>
+                                    <Col className="ls-category-text">Hat</Col>
+                                    <Col className="ls-category-text">Glasses</Col>
+                                </Col>
 
-                            <Col lg={12}>
-                                <img className="img-ads mt-3" src="https://i.pinimg.com/564x/07/0b/d4/070bd4a070f802ae7a2c8a6b3566fd2a.jpg" alt="img-ads" />
-                            </Col>
+                                <Col lg={12} sm={6} >
+                                    <img className="img-ads my-2" src="https://i.pinimg.com/564x/07/0b/d4/070bd4a070f802ae7a2c8a6b3566fd2a.jpg" alt="img-ads" />
+                                </Col>
+                            </Row>
 
-                            <Col lg={12} className="ls-category mt-3">
+                            <Col lg={12} sm={{ span: 12, order: 1 }} className="ls-category mt-3 p-0 pe-3">
                                 <Col className="ls-category-text">LATEST PRODUCT</Col>
                                 <Col>
                                     <div className="ls-history p-2">
@@ -132,28 +135,30 @@ export default function HomePage() {
                         </Col>
 
                         {/* RIGHT SIDE */}
-                        <Col lg={9} className="pe-0">
+                        <Col lg={9} className="p-2">
                             <Col lg={12}>
-                                <Carousel>
-                                    {carouselImg.map((item, index) =>
-                                        <Carousel.Item key={index}>
-                                            <img
-                                                className="d-block w-100 carousel-img"
-                                                src={item.img}
-                                                alt="First slide"
-                                                style={{ height: "50vh" }}
-                                                key={item.id}
-                                            />
-                                        </Carousel.Item>
-                                    )}
-                                </Carousel>
+                                <Row>
+                                    <Carousel>
+                                        {carouselImg.map((item, index) =>
+                                            <Carousel.Item key={index}>
+                                                <img
+                                                    className="d-block w-100 carousel-img"
+                                                    src={item.img}
+                                                    alt="First slide"
+                                                    style={{ height: "50vh" }}
+                                                    key={item.id}
+                                                />
+                                            </Carousel.Item>
+                                        )}
+                                    </Carousel>
+                                </Row>
                             </Col>
 
                             <Col lg={12} className="rs-title mb-0">
                                 BEST DEAL TODAY
                             </Col>
                             <Row className="mt-3">
-                                <Col lg={6}>
+                                <Col className="col-lg-6 col-sm-6">
                                     <Carousel>
                                         {carouselImg.map((item, index) =>
                                             <Carousel.Item key={index}>
@@ -169,7 +174,7 @@ export default function HomePage() {
                                     </Carousel>
                                 </Col>
 
-                                <Col lg={6}>
+                                <Col className="col-lg-6 col-sm-6">
                                     <Carousel>
                                         {carouselImg.map((item, index) =>
                                             <Carousel.Item key={index}>
@@ -191,7 +196,7 @@ export default function HomePage() {
                             </Col>
 
                             <Col lg={12} className="p-0 m-0">
-                                <Col lg={12} className="container-card m-0">
+                                <Col lg={12} className="container-card m-0 p-0">
                                     {sliceCard.map((item) =>
                                         <CardProduct
                                             data={item}

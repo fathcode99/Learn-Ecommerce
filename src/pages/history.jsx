@@ -27,8 +27,8 @@ export default function History() {
             })
     }, [state.history, dispatch])
 
-    const onDelHistory = (index) => {
-        Axios.delete(`http://localhost:2000/history/${index + 1}`)
+    const onDelHistory = (idProduct) => {
+        Axios.delete(`http://localhost:2000/history/${idProduct}`)
             .then(res => {
                 let idUser = localStorage.getItem('idUser')
                 Axios.get(`http://localhost:2000/history?idUser=${idUser}`)
@@ -84,7 +84,7 @@ export default function History() {
                                                 )
                                             })}
                                             <div className="history-del">
-                                                <button className="btn-style mt-4" onClick={() => onDelHistory(index)}>Delete History</button>
+                                                <button className="btn-style mt-4" onClick={() => onDelHistory(item.id)}>Delete History</button>
                                             </div>
                                         </Accordion.Body>
                                     </Accordion.Item>

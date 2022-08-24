@@ -124,7 +124,7 @@ export default function Detail() {
                     </Col>
 
                     <Col lg={7} className="ps-4">
-                        <Col className="detail-brand mb-0 p-0">{products.brand ? products.brand : ''} </Col>
+                        <Col className="detail-brand mt-3 mb-0 p-0">{products.brand ? products.brand : ''} </Col>
                         <Col className="detail-title">{products.name ? products.name : ''}</Col>
                         <Col className="detail-price">IDR : {products.price ? products.price.toLocaleString() : ''}</Col>
                         <Col className="detail-p"> Ready stock :{products.stock ? products.stock : ''}</Col>

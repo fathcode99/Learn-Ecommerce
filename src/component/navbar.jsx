@@ -14,8 +14,8 @@ export default function Navbar() {
         <div className="navbar-main-container p-0">
             <Container className="navbar-style p-0">
                 <Row >
-                    <Col lg={4} className="nav-brand-style">BRANDNAME</Col>
-                    <Col lg={8} className="nav-menu-style">
+                    <Col className="col-lg-4 col-sm-5 nav-brand-style">BRANDNAME</Col>
+                    <Col className="col-lg-8 col-sm-7 nav-menu-style">
                         <Nav className="nav-text-menu" as={Link} to="/">HOME</Nav>
                         {state.role === "admin" ? 
                         <Nav className="nav-text-menu" as={Link} to="/historyadmin">HISTORY ADMIN</Nav>

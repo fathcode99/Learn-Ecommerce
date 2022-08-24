@@ -89,7 +89,7 @@ export default function LoginPages() {
                             {errorPassword ? <b className="p-error"> Please input your Password !</b> : ''}
                         </div>
 
-                        <button className="btn-style" onClick={onSign}>Login</button>
+                        <button className="btn-style mt-3" onClick={onSign}>Login</button>
 
                         <p className="text-ask pt-3 m-0">
                             Don't have an account yet ?

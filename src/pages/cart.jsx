@@ -163,8 +163,8 @@ export default function Cart() {
                         <label>Please input your password to validate </label>
                         <div >
                             <div className="modal-box-input">
-                                <input className="login-input px-0" style={{ width: "90%" }} type={pwVisible ? "text" : "password"} placeholder="Input your password ..." id="password" />
-                                <button className="login-input" style={{ width: "10%" }} onClick={onPwVisible}>
+                                <input className="login-input-modal px-0" type={pwVisible ? "text" : "password"} placeholder="Input your password ..." id="password" />
+                                <button className="login-input" onClick={onPwVisible}>
                                     <i className="fa-solid fa-eye p-0"></i>
                                 </button>
                                 <button className="btn-style mx-3" onClick={onValidPw}>Validate</button>
@@ -197,28 +197,34 @@ export default function Cart() {
                                     <div className="cart-title me-2">
                                         <div className="cart-title-brand">{item.brand}</div>
                                         <div className="cart-title-name">{item.name}</div>
-                                        <div>Ready stock : {item.maxStock}</div>
+                                        <div className="cart-stock">Ready stock : {item.maxStock}</div>
                                     </div>
                                     <div className="cart-price-pcs me-2">IDR {item.price.toLocaleString()} / pcs</div>
 
                                     <div className="cart-counter me-2">
                                         {indexEdit === index ?
                                             <>
-                                                <button className="btn-qty" onClick={() => onMin(index)} disabled={qty === 1 ? true : false}> -</button>
-                                                <input className="qty-input" type="text" value={qty} onChange={(e) => onQty(e, item.maxStock)} />
-                                                <button className="btn-qty" onClick={onPlus} disabled={qty === item.maxStock ? true : false}>+</button>
+                                                <div>
+                                                    <button className="btn-qty" onClick={() => onMin(index)} disabled={qty === 1 ? true : false}> -</button>
+                                                    <input className="qty-input" type="text" value={qty} onChange={(e) => onQty(e, item.maxStock)} />
+                                                    <button className="btn-qty" onClick={onPlus} disabled={qty === item.maxStock ? true : false}>+</button>
+                                                </div>
 
-                                                <button className="btn-style-2 px-1" onClick={() => setIndexEdit(null)}>
-                                                    <i className="fa-solid fa-rectangle-xmark "></i>
-                                                </button>
-                                                <button className="btn-style-2 p-0" onClick={() => onSave(index)}>
-                                                    <i className="fa-solid fa-square-check "></i>
-                                                </button>
+                                                <div>
+                                                    <button className="btn-style-2 px-1" onClick={() => setIndexEdit(null)}>
+                                                        <i className="fa-solid fa-rectangle-xmark "></i>
+                                                    </button>
+                                                    <button className="btn-style-2 p-0" onClick={() => onSave(index)}>
+                                                        <i className="fa-solid fa-square-check "></i>
+                                                    </button>
+                                                </div>
                                             </>
                                             :
                                             <>
+                                            <div style={{display:"flex", alignItems:"center"}}>
                                                 <p className="m-0">{item.qtyBuy}</p>
                                                 <button className="btn-style-2" onClick={() => onEdit(index)}><i className="fa-solid fa-pen-to-square"></i></button>
+                                            </div>
                                             </>
                                         }
                                     </div>

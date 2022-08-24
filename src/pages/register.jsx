@@ -154,7 +154,7 @@ export default function RegisterPage() {
                             {errorConfirmPw ? <b className="p-error">Your confirm password doesn't match</b> : ''}
                         </div>
 
-                        <button className="btn-style" onClick={onSign} >Sign Up</button>
+                        <button className="btn-style mt-3" onClick={onSign} >Sign Up</button>
                         <p className="text-ask pt-3 m-0">
                             Have an account ?
                             <Nav as={Link} to="/login" className="btn-sign-up"> Login </Nav>

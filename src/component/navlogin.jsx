@@ -20,19 +20,20 @@ export default function NavLogin() {
     }
 
     return (
+        
         <div className="nav-top-main-container p-0">
-            <Container>
+            <Container >
                 <Row>
-                    <Col lg={2}><i className="fa-solid fa-phone px-2"></i> +123 456 789 00</Col>
+                    <Col className="col-lg-2 col-sm-4"><i className="fa-solid fa-phone px-2"></i> +123 456 789 00</Col>
                     {state.username ?
                         <>
-                            <Col lg={6}></Col>
-                            <Col lg={2}>
+                            
+                            <Col className="col-lg-2 offset-lg-6 col-sm-3 offset-sm-2">
                                 <Link as={Link} to="/login" className="nav-top-text">
                                     <i className="fa-solid fa-user px-2" ></i>Hello, {state.username}
                                 </Link>
                             </Col>
-                            <Col lg={2}>
+                            <Col className="col-lg-2 col-sm-3">
                                 <Link as={Link} to="/" className="nav-top-text" onClick={onLogOut}>
                                     <i className="fa-solid fa-arrow-right-from-bracket px-2"></i>Logout
                                 </Link>
@@ -41,13 +42,13 @@ export default function NavLogin() {
                         </>
                         :
                         <>
-                            <Col lg={7}></Col>
-                            <Col lg={1}>
+                            
+                            <Col className="col-lg-1 offset-lg-7 col-sm-2 offset-sm-3">
                                 <Link as={Link} to="/login" className="nav-top-text">
                                     <i className="fa-solid fa-user px-2" ></i>Login
                                 </Link>
                             </Col>
-                            <Col lg={2}>
+                            <Col className="col-lg-2 col-sm-3">
                                 <Link as={Link} to="/register" className="nav-top-text">
                                     <i className="fa-solid fa-user-group px-2"></i>Register
                                 </Link>
