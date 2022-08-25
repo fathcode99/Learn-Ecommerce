@@ -18,7 +18,7 @@ export default function Navbar() {
                         <div>SHOP</div>
                         <div>PRODUCTS</div>
                         <div>ABOUT US</div>
-                        <div>CONTACT US</div>
+                        <Nav className="nav-text-menu" as={Link} to="/history">HISTORY</Nav>
                         <div></div>
                     </Col>
                 </Row>
