@@ -19,8 +19,8 @@ export default function HistoryAdmin() {
                 setHistoryAdmin(res.data)
             })
     }, [])
-    const onDelHistory = (index) => {
-        Axios.delete(`http://localhost:2000/history/${index + 1}`)
+    const onDelHistory = (idProd) => {
+        Axios.delete(`http://localhost:2000/history/${idProd}`)
             .then(res => {
                 Axios.get(`http://localhost:2000/history`)
                     .then(res => {

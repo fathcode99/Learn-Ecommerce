@@ -25,7 +25,7 @@ export default function History() {
                     payload: res.data
                 })
             })
-    }, [state.history, dispatch])
+    }, [dispatch])
 
     const onDelHistory = (idProduct) => {
         Axios.delete(`http://localhost:2000/history/${idProduct}`)

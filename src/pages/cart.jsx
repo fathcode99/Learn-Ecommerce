@@ -111,7 +111,7 @@ export default function Cart() {
         let dataHistory = {
             idUser: state.id,
             username: state.username,
-            time: new Date().toLocaleDateString(),
+            time: new Date().toLocaleString(),
             products: cartList
         }
         if (state.password !== validate) {
@@ -142,7 +142,6 @@ export default function Cart() {
                                     })
                                 setCartList([])
                             })
-
                     })
             )
         }

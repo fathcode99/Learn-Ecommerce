@@ -238,23 +238,6 @@
   ],
   "history": [
     {
-      "idUser": 2,
-      "username": "user0",
-      "time": "8/24/2022",
-      "products": [
-        {
-          "id": 3,
-          "name": "URBAN CASUAL FASHION WHITE BLACK SNEAKER",
-          "brand": "SNEAKER",
-          "price": 1000000,
-          "images": "https://i.pinimg.com/564x/42/eb/5a/42eb5a9bf7909352ae790064498b4be0.jpg",
-          "maxStock": 9,
-          "qtyBuy": 1
-        }
-      ],
-      "id": 1
-    },
-    {
       "idUser": 4,
       "username": "responsive",
       "time": "8/24/2022",

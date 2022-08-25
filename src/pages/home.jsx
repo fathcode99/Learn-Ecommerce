@@ -36,15 +36,12 @@ export default function HomePage() {
             .then(res => {
                 setProducts(res.data)
                 setMaxPage(Math.ceil(res.data.length / prodPerPage))
-                // console.log({products : res.data})
             })
         Axios.get('http://localhost:2000/slider')
             .then(res => {
                 setCarouselImg(res.data)
             })
     }, [prodPerPage])
-
-
 
     const onNext = () => {
         setPage(page + 1)
@@ -128,8 +125,6 @@ export default function HomePage() {
                                         </div>
                                     </div>
                                 </Col>
-
-
                             </Col>
 
                         </Col>
